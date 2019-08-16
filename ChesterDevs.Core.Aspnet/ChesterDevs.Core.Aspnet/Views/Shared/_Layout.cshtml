@@ -1,55 +1,127 @@
-﻿<!DOCTYPE html>
-<html>
+﻿@{
+    var sidbarImage = Url.Content("~/theme/img/default-sidebar.jpg");
+}
+<!DOCTYPE html>
+<html class="no-js">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
     <title>@ViewData["Title"] - Chester Devs</title>
 
+    <meta name="viewport" content="width=device-width">
+    
     <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/theme/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="~/theme/css/main.css">
+        
         <link rel="stylesheet" href="~/css/site.css" />
+        
+        
+        <!--[if lt IE 9]>
+            <script src="/js/vendor/html5shiv.min.js"></script>
+        <![endif]-->
+
+        <script src="~/theme/js/vendor/modernizr.custom.32229-2.8-respondjs-1-4-2.js"></script>
     </environment>
     <environment exclude="Development">
+        @*
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"/>
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true"/>
+        *@
     </environment>
+
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">ChesterDevs.Core.Aspnet</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+
+    <!-- if the user has javascript disabled they can still use the menu -->
+    <noscript>
+        <div class="no-js-menu">
+            <ul>
+                <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
+                <li><i class="fa fa-user"></i><a href="author.html">John Smith</a></li>
+                <li><i class="fa fa-anchor"></i><a href="page.html">About</a></li>
+                <li><i class="fa fa-star"></i><a href="favorites.html">Favorites</a></li>
+                <li><i class="fa fa-paper-plane"></i><a href="contact.html">Contact</a></li>
+                <li><i class="fa fa-file"></i><a href="post.html">Post Page</a></li>
+                <li><i class="fa fa-file"></i><a href="post-sidebar.html">Post with Sidebar</a></li>
+                <li><i class="fa fa-home"></i><a href="alt-home.html">Alternate Home</a></li>
+                <li><i class="fa fa-image"></i><a href="category.html">Category Page</a></li>
+            </ul>
+        </div>
+    </noscript>
+    <!-- end no script -->
+
+    <main class="container left-container">
+        <div class="row">
+
+            <div id="menu-target">
+                <ul>
+                    <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
+                    <li><i class="fa fa-user"></i><a href="author.html">John Smith</a></li>
+                    <li><i class="fa fa-anchor"></i><a href="page.html">About</a></li>
+                    <li><i class="fa fa-star"></i><a href="favorites.html">Favorites</a></li>
+                    <li><i class="fa fa-paper-plane"></i><a href="contact.html">Contact</a></li>
+                </ul>
+                <hr>
+                <ul>
+                    <li><i class="fa fa-file"></i><a href="post.html">Post Page</a></li>
+                    <li><i class="fa fa-file"></i><a href="post-sidebar.html">Post with Sidebar</a></li>
+
+                    <li><i class="fa fa-home"></i><a href="alt-home.html">Alternate Home</a></li>
+                    <li><i class="fa fa-image"></i><a href="category.html">Category Page</a></li>
                 </ul>
             </div>
-        </div>
-    </nav>
+
+            <section class="sidebar col-lg-5 col-12" style="background-image: url(@sidbarImage)">
+
+                <span class="menu-trigger animated fadeInDown">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </span>
+
+                <div class="site-info">
+                    <div class="primary-info">
+                        <h1>Writer</h1>
+                        <p>A minimal blogging theme to put your content on show. <a href="post.html">Look at the features.</a> </p>
+
+                        <p>Content is king</p>
+                    </div>
+                    <div class="secondary-info">
+                        <p>
+                            <a class="btn btn-primary" href="#"><i class="fa fa-user-plus"></i>Join Our Newsletter</a>
+                        </p>
+                    </div>
+                </div>
+            </section><!-- end sidebar -->
+
+            @RenderBody()
+            
+        </div> <!--/row -->
+
+    </main> <!-- /container -->
+
     
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2019 - ChesterDevs.Core.Aspnet</p>
-        </footer>
-    </div>
+
 
     <environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/theme/js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="~/theme/js/vendor/jquery.jpanelmenu.min.js"></script>
+        <script src="~/theme/js/vendor/popper.min.js"></script>
+        <script src="~/theme/js/vendor/bootstrap.min.js"></script>
+        <script src="~/theme/js/vendor/fastclick.min.js"></script>
+
+        <script src="~/theme/js/main.js"></script>
+        <script src="~/js/site.js"></script>
+
     </environment>
     <environment exclude="Development">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        @*
         <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
                 asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
                 asp-fallback-test="window.jQuery"
@@ -63,6 +135,11 @@
                 integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd">
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
+        *@
+
+        <script src="~/theme/js/main.min.js" asp-append-version="true"></script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+
     </environment>
 
     @RenderSection("Scripts", required: false)
