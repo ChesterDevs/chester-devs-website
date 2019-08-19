@@ -10,9 +10,15 @@ namespace ChesterDevs.Core.Aspnet.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        private static string[] ValidViews;
+
+
+        public IActionResult Pages(string view)
         {
-            return View();
+            if(string.IsNullOrEmpty(view))
+                return View("home");
+
+            return View(view);
         }
         
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

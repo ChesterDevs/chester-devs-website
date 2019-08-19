@@ -56,7 +56,7 @@ namespace ChesterDevs.Core.Aspnet
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=Pages}/{view=Home}");
             });
         }
     }

@@ -13,4 +13,10 @@
     <Folder Include="wwwroot\theme\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Views\Home\Sponsors.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
 </Project>
