@@ -1,38 +1,90 @@
 ﻿@{
-    ViewData["Title"] = "Sponsors";
-    var sidbarImage = Url.Content("~/theme/img/default-about.jpg");
+    ViewData["Title"] = "Home Page";
+    var sidbarImage = Url.Content("~/theme/img/default-sidebar.jpg");
 }
-<header class="hero-image" role="banner" style="background-image: url(@sidbarImage);">
 
-    <partial name="_HamburgerButton" />
-
-
-    <partial name="_Nav" />
-</header>
-
-<main class="container">
+<main class="container left-container">
     <div class="row">
-        <div class="col-12 single-content">
+
+        <partial name="_Nav" />
+
+        <section class="sidebar col-lg-5 col-12" style="background-image: url(@sidbarImage)">
+
+            <partial name="_HamburgerButton" />
+
+            <partial name="_SiteInfo" />
+        </section><!-- end sidebar -->
+
+        <section class="col-lg-7 col-12 ml-auto main-content">
 
 
-            <h1>A Single Full Width Page Template</h1>
+            <div class="author-bio">
 
-            <p class="subtitle">Can be used for any tpe of content...</p>
+                <img src="@Url.Content("~/images/Shortlist-Logo.jpg")">
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra ligula eget feugiat sollicitudin. Praesent accumsan, ante ut porttitor aliquet, odio felis mollis ante, et pretium arcu ipsum eget turpis. Quisque congue odio tristique, tincidunt arcu a, dignissim neque. Cras ligula erat, porta sed tristique at, sollicitudin sit amet ligula. Quisque eleifend elementum mauris, eu condimentum tortor ultrices a. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer hendrerit, arcu a aliquam malesuada, sapien quam tempor neque, nec aliquam odio mi vel diam. Pellentesque egestas pharetra justo, id malesuada erat tincidunt ac. Ut mauris mauris, ultricies ut pharetra sit amet, suscipit sed nibh. Suspendisse vestibulum sem sed rhoncus pharetra. Nunc commodo, neque eget gravida mattis, augue est sollicitudin nunc, elementum aliquet tortor mi ac velit. Ut nec pharetra est. Vestibulum at mauris sapien. Duis sed turpis at lectus egestas rhoncus.</p>
+                <div class="author-bio__info">
+                    <h1><a href="http://www.ontheshortlist.co.uk" target="_blank">Shortlist Recruitment</a></h1>
+                    <p>ShortList Recruitment is a Chester based agency, specialising in placing developers of all levels right across the North West.    The .NET and PHP market is incredibly buoyant right now, and we understand the pressures and obstacles that face developers when trying to secure their next role.</p>
+                    <p><a href="http://www.ontheshortlist.co.uk" target="_blank">www.ontheshortlist.co.uk</a></p>
+                </div>
+            </div>
 
-            <p>Lorem massa hendrerit mi, ut dapibus sem enim at nisl. Nullam ut mollis arcu. Quisque lobortis nibh diam, non molestie dui pretium et. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam quos, mollitia dolor nam soluta consequuntur excepturi eveniet quod autem quasi. Labore dolorum vel voluptates molestias qui perspiciatis eveniet non, culpa!</p>
 
+            <h2 class="favorites">Other sponsors</h2>
 
-        </div><!-- main-content/col -->
+            <div class="posts-block animated fadeIn ">
+
+                <article class="post author-page">
+                    <div class="post-preview col-10 col-sm-9  no-gutter">
+                        <h2><a href="http://foremansllp.com" target="_blank">Foremans LLP Accountants</a></h2>
+
+                        <p>Specialist Accountants providing accounting and tax advice to Freelancers</p>
+                        
+                    </div>
+                    <div class=" col-3  no-gutter">
+                        <img src="@Url.Content("~/images/Foremans_V2_Tidy_logo.png")" class="user-icon" alt="user-image">
+                    </div>
+                </article>
+
+                <article class="post author-page">
+                    <div class="post-preview col-10 col-sm-9  no-gutter">
+                        <h2><a href="http://www.wmreply.com" target="_blank">WM Reply</a></h2>
+
+                        <p>
+                            WM Reply is a consultancy specialising in
+                            Microsoft SharePoint and Office 365
+                        </p>
+
+                    </div>
+                    <div class=" col-3  no-gutter">
+                        <img src="@Url.Content("~/images/WMReply.PNG")" class="user-icon" alt="user-image">
+                    </div>
+                </article>
+
+                <article class="post author-page">
+                    <div class="post-preview col-10 col-sm-9  no-gutter">
+                        <h2><a href="https://www.orbitalgo.com" target="_blank">Orbital Software Solutions</a></h2>
+
+                        <p>
+                            A team of IT professionals delivering the very
+                            best in systems, consultancy & support.
+                        </p>
+
+                    </div>
+                    <div class=" col-3  no-gutter">
+                        <img src="@Url.Content("~/images/OrbitalWithSurroundCD.png")" class="user-icon" alt="user-image">
+                    </div>
+                </article>
+
+                <div class="view-all-by-author">
+                    <a asp-controller="Home" asp-action="Pages" asp-route-view="SponorshipDetail">How to become a sponsor <i class="fa fa-chevron-right"></i></a>
+                </div>
+
+                <partial name="_Footer" />
+
+            </div> <!--/posts-block -->
+        </section><!-- main content -->
     </div> <!--/row -->
 
 </main> <!-- /container -->
 
-<footer class="single single-page without-readmore">
-    <div class="container">
-        <div class="col-sm-12">
-            <p>The writer community loves your content. Writer &copy; 2017 <a href="index.html">latest posts</a></p>
-        </div>
-    </div>
-</footer>

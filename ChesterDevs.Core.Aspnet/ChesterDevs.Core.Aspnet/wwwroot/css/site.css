@@ -1,1 +1,15 @@
-﻿
+﻿/* theme overrides */
+
+.author-bio img {
+    border-radius: 0 !important;
+}
+
+.author-bio__info h1 a {
+    text-decoration: none;
+    color: #333337;
+    border: none;
+}
+
+.author-bio__info h1 a:hover {
+    color: #b6b6b6;
+}
