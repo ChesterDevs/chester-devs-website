@@ -13,3 +13,8 @@
 .author-bio__info h1 a:hover {
     color: #b6b6b6;
 }
+
+.sponsor-icon {
+    padding: 0;
+    float: right;
+}

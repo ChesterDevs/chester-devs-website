@@ -12,7 +12,17 @@
 
             <partial name="_HamburgerButton" />
 
-            <partial name="_SiteInfo" />
+            <div class="site-info">
+                <div class="primary-info">
+                    <h1>Sponsors</h1>
+                    <p>To cover costs we rely on financial support from businesses. <a asp-controller="Home" asp-action="Pages" asp-route-view="SponorshipDetail">How to become a sponsor </a></p>
+
+                    <p>Content is king</p>
+                </div>
+                <div class="secondary-info">
+                    <partial name="_SidebarSocials"/>
+                </div>
+            </div>
         </section><!-- end sidebar -->
 
         <section class="col-lg-7 col-12 ml-auto main-content">
@@ -42,7 +52,7 @@
                         
                     </div>
                     <div class=" col-3  no-gutter">
-                        <img src="@Url.Content("~/images/Foremans_V2_Tidy_logo.png")" class="user-icon" alt="user-image">
+                        <img src="@Url.Content("~/images/Foremans_V2_Tidy_logo.png")" class="sponsor-icon" alt="Foremans LLP Accountants Logo">
                     </div>
                 </article>
 
@@ -57,7 +67,7 @@
 
                     </div>
                     <div class=" col-3  no-gutter">
-                        <img src="@Url.Content("~/images/WMReply.PNG")" class="user-icon" alt="user-image">
+                        <img src="@Url.Content("~/images/WMReply.PNG")" class="sponsor-icon" alt="WM Reply Logo">
                     </div>
                 </article>
 
@@ -72,7 +82,7 @@
 
                     </div>
                     <div class=" col-3  no-gutter">
-                        <img src="@Url.Content("~/images/OrbitalWithSurroundCD.png")" class="user-icon" alt="user-image">
+                        <img src="@Url.Content("~/images/OrbitalWithSurroundCD.png")" class="sponsor-icon" alt="Orbital Software Solutions Logo" >
                     </div>
                 </article>
 
