@@ -14,7 +14,7 @@
     color: #b6b6b6;
 }
 
-.sponsor-icon {
+.sponsor-icon, event-image {
     padding: 0;
     float: right;
 }
