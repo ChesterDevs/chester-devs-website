@@ -1,6 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Sponsors";
-    var sidbarImage = Url.Content("~/images/ChesterTownHall.png");
+    ViewData["page"] = "sponsors";
 }
 
 <main class="container left-container">
@@ -8,7 +8,7 @@
 
         <partial name="_Nav" />
 
-        <section class="sidebar col-lg-5 col-12" style="background-image: url(@sidbarImage)">
+        <section class="sidebar col-lg-5 col-12 @ViewData["page"]">
 
             <partial name="_HamburgerButton" />
 

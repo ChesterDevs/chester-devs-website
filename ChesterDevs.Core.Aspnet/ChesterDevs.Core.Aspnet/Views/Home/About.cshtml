@@ -1,8 +1,8 @@
 ﻿@{
     ViewData["Title"] = "About";
-    var sidbarImage = Url.Content("~/images/Helmet.png");
+    ViewData["page"] = "about";
 }
-<header class="hero-image" role="banner" style="background-image: url(@sidbarImage);">
+<header class="hero-image @ViewData["page"]" role="banner">
 
     <partial name="_HamburgerButton" />
 
