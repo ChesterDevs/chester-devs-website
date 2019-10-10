@@ -1,6 +1,6 @@
 # Chester Devs Website 
 
-This repository is the source to the [Chester Devs website](https://www.chesterdevs.co.uk/)
+This repository is the source to the [Chester Devs website](https://chester.dev/)
 
 # Current status
 
@@ -8,18 +8,18 @@ This is the very start of this project to get a basic website for Chester Devs. 
 
 # Plans
 
-Once the initial build is complete, help from members will be possible ... and encouraged
+The initial build is complete, so now it's time for you to "have at it". 
 
-The initial build will contain the following:
+The initial build is using the following, but only because that's what I'm most familiar with and so the fastest way to get the ball rolling.
 
-- Basic who we are and when/where we meet
-- Link to Meetup
-- Sponsor listing
-- Recruiter rules
-- Nice photos of Chester
+- Asp.Net Core
+- Bootstrap with a theme
+
+Please fork this repo, add features, add copies of the site in some other framework, tweak and improve where you see fit and submit a pull request.
 
 ## Hopes and dreams
 
 - Pull in event listing from Meetup (subject to being able to use the api)
 - Member blog posts
+- Event YouTube Videos
 - Separate mail list to Meetup (Mailchimp or similar)
