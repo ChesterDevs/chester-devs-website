@@ -19,6 +19,7 @@ Please fork this repo, add features, add copies of the site in some other framew
 
 ## Hopes and dreams
 
+- Contributor list (automatically taken from GitHub if possible)
 - Pull in event listing from Meetup (subject to being able to use the api)
 - Member blog posts
 - Event YouTube Videos
