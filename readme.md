@@ -19,8 +19,6 @@ Please fork this repo, add features, add copies of the site in some other framew
 
 ## Hopes and dreams
 
-- Contributor list (automatically taken from GitHub if possible)
-- Pull in event listing from Meetup (subject to being able to use the api)
-- Member blog posts
-- Event YouTube Videos
-- Separate mail list to Meetup (Mailchimp or similar)
+There are many enhancements I'd like to see for this site and I'm would love to see more ideas submitted.
+
+See the [enhancement issues](https://github.com/ChesterDevs/chester-devs-website/labels/enhancement) for the list.
