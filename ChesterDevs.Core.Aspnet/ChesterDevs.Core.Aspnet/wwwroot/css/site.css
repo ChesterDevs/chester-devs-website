@@ -1,41 +1,52 @@
 ﻿/* theme overrides */
 
 .author-bio img {
-    border-radius: 0 !important;
+  border-radius: 0 !important;
 }
 
 .author-bio__info h1 a {
-    text-decoration: none;
-    color: #333337;
-    border: none;
+  text-decoration: none;
+  color: #333337;
+  border: none;
 }
 
 .author-bio__info h1 a:hover {
-    color: #b6b6b6;
+  color: #b6b6b6;
 }
 
-.sponsor-icon, event-image {
-    padding: 0;
-    float: right;
+.sponsor-icon,
+event-image {
+  padding: 0;
+  float: right;
 }
 
 /* Backgrounds */
 header.hero-image.about {
-    background: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url(/images/Helmet.png);
-    background-size: cover;
-    background-position: 50% 50%;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(/images/Helmet.png);
+  background-size: cover;
+  background-position: 50% 50%;
 }
 header.hero-image.agents {
-    background: linear-gradient(rgba(0, 0, 0, .05), rgba(0, 0, 0, .05)), url(/images/River.png);
-    background-size: cover;
-    background-position: 50% 50%;
+  background: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)),
+    url(/images/River.png);
+  background-size: cover;
+  background-position: 50% 50%;
 }
-section.sidebar.home, section.sidebar.sponsors, section.sidebar.contact {
-    background: linear-gradient(rgba(0, 0, 0, .05), rgba(0, 0, 0, .05)), url(/images/ChesterTownHall.png);
-    background-size: cover;
+section.sidebar.home,
+section.sidebar.sponsors,
+section.sidebar.contact {
+  background: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)),
+    url(/images/ChesterTownHall.png);
+  background-size: cover;
 }
 header.hero-image.sponsor-details {
-    background: linear-gradient(rgba(0, 0, 0, .05), rgba(0, 0, 0, .05)), url(/images/Pret.png);
-    background-size: cover;
-    background-position: 50% 50%;
+  background: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)),
+    url(/images/Pret.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+#contributers-list-container {
+  margin-top: 50px;
 }

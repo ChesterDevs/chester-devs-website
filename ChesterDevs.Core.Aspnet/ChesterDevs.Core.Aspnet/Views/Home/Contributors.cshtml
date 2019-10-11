@@ -1,0 +1,54 @@
+@{
+    ViewData["Title"] = "Contributors";
+    var sidbarImage = Url.Content("~/images/River.png");
+}
+<header class="hero-image" role="banner" style="background-image: url(@sidbarImage);">
+
+    <partial name="_HamburgerButton" />
+
+
+    <partial name="_Nav" />
+</header>
+
+<main class="container">
+    <div class="row">
+        <div class="col-12 single-content">
+            
+            <h1>Contributers</h1>
+            <div id="contributer-list-container">
+                <div style="clear:both; margin: 8px; height: 80px; width: 600px;">
+                    <img src="https://avatars2.githubusercontent.com/u/18592768?s=200&v=4" alt="Linda Jones" style="float:left; width:80px;">
+                    <div style="float:left; margin-left: 12px;">
+                        <h3>Supplied images</h3>
+                        <h2>Linda Jones</h2>
+                    </div>
+                </div>
+                <div id="contributer-list">
+                    <h1 class="text-center">
+                        <div class="fa fa-spinner fa-spin"></div>    
+                    </h1>                     
+                </div>
+            </div>
+            
+        </div><!-- main-content/col -->
+    </div> <!--/row -->
+
+</main> <!-- /container -->
+
+@section Scripts {
+    <script type="text/javascript">
+		window.onload = function loadContributors() {
+            fetch("https://api.github.com/repos/ChesterDevs/chester-devs-website/contributors")
+            .then((response) => {if(response.ok) {return response.json()}})
+            .then((contributors) => {
+                let list = "";
+                contributors.forEach((contributor, index) => {
+                    list += `<div style="clear:both; margin: 8px; height: 80px; width: 600px;"><img src="${contributor.avatar_url}" alt="${contributor.login}" style="float:left; width:80px;"><div style="float:left; margin-left: 12px;"><h3>#${index + 1} (<a href="https://github.com/ChesterDevs/chester-devs-website/commits/master?author=${contributor.login}">${contributor.contributions} commits</a>)</h3><h2>${contributor.login}</h2><a href="${contributor.url}">${contributor.url}</a></div></div>`
+                })
+                document.getElementById("contributer-list").innerHTML = list;
+            })
+        };
+	</script>
+}
+
+
