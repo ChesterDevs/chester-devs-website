@@ -13,8 +13,9 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- script: dotnet build --configuration $(buildConfiguration)
+- script: dotnet publish ChesterDevs.Core.Aspnet/ChesterDevs.Core.Aspnet.sln --configuration $(buildConfiguration) --self-contained --runtime win-x64 --framework netcoreapp2.1
   displayName: 'dotnet build $(buildConfiguration)'
+
 - task: PublishBuildArtifacts@1
   inputs:
     pathtoPublish: '$(Build.SourcesDirectory)/ChesterDevs.Core.Aspnet/ChesterDevs.Core.Aspnet/bin/Release/netcoreapp2.1/win-x64/publish/'
