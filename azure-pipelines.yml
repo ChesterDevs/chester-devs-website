@@ -7,16 +7,19 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'windows-latest'
 
 variables:
   buildConfiguration: 'Release'
 
 steps:
-- script: dotnet publish ChesterDevs.Core.Aspnet/ChesterDevs.Core.Aspnet.sln --configuration $(buildConfiguration) --self-contained --runtime win-x64 --framework netcoreapp2.1
-  displayName: 'dotnet build $(buildConfiguration)'
-
-- task: PublishBuildArtifacts@1
+  
+- task: Cake@0
   inputs:
-    pathtoPublish: '$(Build.SourcesDirectory)/ChesterDevs.Core.Aspnet/ChesterDevs.Core.Aspnet/bin/Release/netcoreapp2.1/win-x64/publish/'
-    artifactName: website-files
+    script: 'build\build.cake'
+    target: 'BuildAndDeployWeb'
+    verbosity: 'Verbose'
+
+  env:
+    ChesterDev_Deploy_Username: $(ChesterDev_Deploy_Username)
+    ChesterDev_Deploy_Password: $(ChesterDev_Deploy_Password)
