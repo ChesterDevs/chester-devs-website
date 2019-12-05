@@ -4,7 +4,9 @@ I really want this to be a community project so if anything isn't clear or you'v
 
 # What should I do
 
-Have a look at [enhancement issues](https://github.com/ChesterDevs/chester-devs-website/labels/enhancement) for a list of ideas on what would be nice to have. Altenatively, if you see a mistake or have your own idea run with it.  If it's a large piece of work it might be worth getting in touch before you get too far through.
+Have a look at [enhancement issues](https://github.com/ChesterDevs/chester-devs-website/labels/enhancement) for a list of ideas on what would be nice to have. Alternatively, if you see a mistake or have your own idea run with it.  If it's a large piece of work it might be worth getting in touch before you get too far through.
+
+Most issues can be broken down into Frontend development (Html, CSS, JS) and Backend development (C#). If you are more comfortable with one and not the other, mention that in the issue and we can create a project for this to allow more than one person to contribute.
 
 # How
 
