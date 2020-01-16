@@ -1,0 +1,495 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cake.Ftp</name>
+    </assembly>
+    <members>
+        <member name="T:Cake.Ftp.Extensions">
+            <summary>
+            Extension methods.
+            </summary>
+        </member>
+        <member name="M:Cake.Ftp.Extensions.NotNull``1(``0,System.String)">
+            <summary>
+            Throws an exception if the specified parameter's value is null.
+            </summary>
+            <typeparam name="T">The type of the parameter.</typeparam>
+            <param name="value">The value of the argument.</param>
+            <param name="parameterName">The name of the parameter to include in any thrown exception.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="value"/> is <c>null</c></exception>
+        </member>
+        <member name="M:Cake.Ftp.Extensions.NotNullOrWhiteSpace(System.String,System.String)">
+            <summary>
+            Throws an exception if the specified parameter's value is null, empty or consists only of white-space characters.
+            </summary>
+            <param name="value">The value of the argument.</param>
+            <param name="parameterName">The name of the parameter to include in any thrown exception.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="value"/> is <c>null</c></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is empty or consists only of white-space characters</exception>       
+        </member>
+        <member name="T:Cake.Ftp.FtpAliases">
+            <summary>
+            Contains functionality for working with FTP
+            </summary>
+        </member>
+        <member name="M:Cake.Ftp.FtpAliases.FtpUploadFile(Cake.Core.ICakeContext,System.Uri,Cake.Core.IO.FilePath,System.String,System.String)">
+            <summary>
+            Uploads the file to the FTP server using the supplied credentials.
+            </summary>
+            <example>
+            <code>
+            Task("UploadFile")
+              .Does(() => {
+                var fileToUpload = File("some.txt");
+                FtpUploadFile("ftp://myserver/random/test.htm", fileToUpload, "some-user", "some-password");
+            });
+            </code>
+            </example>
+            <param name="context">The context.</param>
+            <param name="serverUri">FTP URI requiring FTP:// schema.</param>
+            <param name="fileToUpload">The file to be uploaded.</param>
+            <param name="username">Username of the FTP account.</param>
+            <param name="password">Password of the FTP account.</param>
+        </member>
+        <member name="M:Cake.Ftp.FtpAliases.FtpUploadFile(Cake.Core.ICakeContext,System.Uri,Cake.Core.IO.FilePath,Cake.Ftp.FtpSettings)">
+            <summary>
+            Uploads the file to the FTP server using the supplied credentials.
+            </summary>
+            <example>
+            <code>
+            Task("UploadFile")
+              .Does(() => {
+                var fileToUpload = File("some.txt");
+                var settings = new FtpSettings() {
+                  Username = "some-user",
+                  Password = "some-password",
+                  FileExistsBehavior = FtpExists.Overwrite,
+                  CreateRemoteDirectory = true
+                };
+                FtpUploadFile("ftp://myserver/random/test.htm", fileToUpload, settings);
+            });
+            </code>
+            </example>
+            <param name="context">The context.</param>
+            <param name="serverUri">FTP URI requiring FTP:// schema.</param>
+            <param name="fileToUpload">The file to be uploaded.</param>
+            <param name="settings">The settings.</param>
+        </member>
+        <member name="M:Cake.Ftp.FtpAliases.FtpUploadFile(Cake.Core.ICakeContext,System.String,System.String,Cake.Core.IO.FilePath,Cake.Ftp.FtpSettings)">
+            <summary>
+            Uploads the file to the FTP server using the supplied credentials.
+            </summary>
+            <example>
+            <code>
+            Task("UploadFile")
+              .Does(() => {
+                var fileToUpload = File("some.txt");
+                var settings = new FtpSettings() {
+                  Username = "some-user",
+                  Password = "some-password",
+                  FileExistsBehavior = FtpExists.Overwrite,
+                  CreateRemoteDirectory = true
+                };
+                FtpUploadFile("myserver", "/random/test.htm", fileToUpload, settings);
+            });
+            </code>
+            </example>
+            <param name="context">The context.</param>
+            <param name="host">host of the FTP Client</param>
+            <param name="remotePath">path on the file on the server</param>
+            <param name="fileToUpload">The file to be uploaded.</param>
+            <param name="settings">The settings.</param>
+        </member>
+        <member name="M:Cake.Ftp.FtpAliases.FtpDeleteFile(Cake.Core.ICakeContext,System.Uri,System.String,System.String)">
+            <summary>
+            Deletes the file on the FTP server using the supplied credentials.
+            </summary>
+            <example>
+            <code>
+            Task("DeleteFile")
+              .Does(() => {
+                FtpDeleteFile("ftp://myserver/random/test.htm", "some-user", "some-password");
+            });
+            </code>
+            </example>
+            <param name="context">The context.</param>
+            <param name="serverUri">FTP URI requring FTP:// scehma.</param>
+            <param name="username">Username of the FTP account.</param>
+            <param name="password">Password of the FTP account.</param>
+        </member>
+        <member name="M:Cake.Ftp.FtpAliases.FtpDeleteFile(Cake.Core.ICakeContext,System.Uri,Cake.Ftp.FtpSettings)">
+            <summary>
+            Deletes the file on the FTP server using the supplied credentials.
+            </summary>
+            <example>
+            <code>
+            Task("DeleteFile")
+              .Does(() => {
+                var settings = new FtpSettings() {
+                  Username = "some-user",
+                  Password = "some-password"
+                };
+                FtpDeleteFile("ftp://myserver/random/test.htm", settings);
+            });
+            </code>
+            </example>
+            <param name="context">The context.</param>
+            <param name="serverUri">FTP URI requring FTP:// scehma.</param>
+            <param name="settings">The settings.</param>
+        </member>
+        <member name="M:Cake.Ftp.FtpAliases.FtpDeleteFile(Cake.Core.ICakeContext,System.String,System.String,Cake.Ftp.FtpSettings)">
+            <summary>
+            Deletes the file on the FTP server using the supplied credentials.
+            </summary>
+            <example>
+            <code>
+            Task("DeleteFile")
+              .Does(() => {
+                var settings = new FtpSettings() {
+                  Username = "some-user",
+                  Password = "some-password"
+                };
+                FtpDeleteFile("myserver", "/random/test.htm", settings);
+            });
+            </code>
+            </example>
+            <param name="context">The context.</param>
+            <param name="host">host of the FTP Client</param>
+            <param name="remotePath">path on the file on the server</param>
+            <param name="settings">The settings.</param>
+        </member>
+        <member name="M:Cake.Ftp.FtpAliases.FtpUploadDirectory(Cake.Core.ICakeContext,System.String,System.String,Cake.Core.IO.DirectoryPath,Cake.Ftp.FtpSettings)">
+            <summary>
+            Uploads a directory recursively to the FTP server preserving file paths using the supplied credentials.
+            </summary>
+            <example>
+            <code>
+            Task("UploadDirectory")
+              .Does(() => {
+                var directoryToUpload = Directory("./artifacts/");
+                var settings = new FtpSettings() {
+                  Username = "some-user",
+                  Password = "some-password",
+                  FileExistsBehavior = FtpExists.Overwrite,
+                  CreateRemoteDirectory = true
+                };
+                FtpUploadDirectory("myserver", "/httpdocs", directoryToUpload, settings);
+            });
+            </code>
+            </example>
+            <param name="context">The context.</param>
+            <param name="host">host of the FTP Client</param>
+            <param name="remoteDirectory">directory on the server to upload files to</param>
+            <param name="directoryToUpload">The local directory to upload the contents of</param>
+            <param name="settings">The settings.</param>
+        </member>
+        <member name="T:Cake.Ftp.FtpClient">
+            <summary>
+            The FTP Client.
+            </summary>
+        </member>
+        <member name="M:Cake.Ftp.FtpClient.#ctor(Cake.Core.IO.IFileSystem,Cake.Core.ICakeEnvironment,Cake.Ftp.Services.IFtpService)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="fileSystem">The filesystem.</param>
+            <param name="environment">The cake environment.</param>
+            <param name="ftpService">The FTP Service.</param>
+        </member>
+        <member name="M:Cake.Ftp.FtpClient.UploadFile(System.String,System.String,Cake.Core.IO.FilePath,Cake.Ftp.FtpSettings)">
+            <summary>
+            Uploads file to specified location using the supplied credentials.
+            </summary>
+            <param name="host">host of the FTP Client</param>
+            <param name="remotePath">path on the file on the server</param>
+            <param name="fileToUpload">The file to upload.</param>
+            <param name="settings">The settings.</param>
+        </member>
+        <member name="M:Cake.Ftp.FtpClient.DeleteFile(System.String,System.String,Cake.Ftp.FtpSettings)">
+            <summary>
+            Deletes a file at the specified URI.
+            </summary>
+            <param name="host">host of the FTP Client</param>
+            <param name="remotePath">path on the file on the server</param>
+            <param name="settings">The settings.</param>
+        </member>
+        <member name="M:Cake.Ftp.FtpClient.UploadDirectory(System.String,System.String,Cake.Core.IO.IDirectory,Cake.Ftp.FtpSettings)">
+            <summary>
+            Uploads a file.
+            </summary>
+            <param name="host">host of the FTP Client</param>
+            <param name="remoteDirectory">root directory on the server to upload the files to</param>
+            <param name="sourceDirectory">The local directory containing the files</param>
+            <param name="settings">Ftp Settings</param>
+        </member>
+        <member name="T:Cake.Ftp.FtpDataConnectionType">
+            <summary>Data connection type</summary>
+        </member>
+        <member name="F:Cake.Ftp.FtpDataConnectionType.AutoPassive">
+            <summary>
+            This type of data connection attempts to use the EPSV command
+            and if the server does not support EPSV it falls back to the
+            PASV command before giving up unless you are connected via IPv6
+            in which case the PASV command is not supported.
+            </summary>
+        </member>
+        <member name="F:Cake.Ftp.FtpDataConnectionType.PASV">
+            <summary>
+            Passive data connection. EPSV is a better
+            option if it's supported. Passive connections
+            connect to the IP address dictated by the server
+            which may or may not be accessible by the client
+            for example a server behind a NAT device may
+            give an IP address on its local network that
+            is inaccessible to the client. Please note that IPv6
+            does not support this type data connection. If you
+            ask for PASV and are connected via IPv6 EPSV will
+            automatically be used in its place.
+            </summary>
+        </member>
+        <member name="F:Cake.Ftp.FtpDataConnectionType.PASVEX">
+            <summary>
+            Same as PASV except the host supplied by the server is ignored
+            and the data connection is made to the same address that the control
+            connection is connected to. This is useful in scenarios where the
+            server supplies a private/non-routable network address in the
+            PASV response. It's functionally identical to EPSV except some
+            servers may not implement the EPSV command. Please note that IPv6
+            does not support this type data connection. If you
+            ask for PASV and are connected via IPv6 EPSV will
+            automatically be used in its place.
+            </summary>
+        </member>
+        <member name="F:Cake.Ftp.FtpDataConnectionType.EPSV">
+            <summary>
+            Extended passive data connection, recommended. Works
+            the same as a PASV connection except the server
+            does not dictate an IP address to connect to, instead
+            the passive connection goes to the same address used
+            in the control connection. This type of data connection
+            supports IPv4 and IPv6.
+            </summary>
+        </member>
+        <member name="F:Cake.Ftp.FtpDataConnectionType.AutoActive">
+            <summary>
+            This type of data connection attempts to use the EPRT command
+            and if the server does not support EPRT it falls back to the
+            PORT command before giving up unless you are connected via IPv6
+            in which case the PORT command is not supported.
+            </summary>
+        </member>
+        <member name="F:Cake.Ftp.FtpDataConnectionType.PORT">
+            <summary>
+            Active data connection, not recommended unless
+            you have a specific reason for using this type.
+            Creates a listening socket on the client which
+            requires firewall exceptions on the client system
+            as well as client network when connecting to a
+            server outside of the client's network. In addition
+            the IP address of the interface used to connect to the
+            server is the address the server is told to connect to
+            which, if behind a NAT device, may be inaccessible to
+            the server. This type of data connection is not supported
+            by IPv6. If you specify PORT and are connected via IPv6
+            EPRT will automatically be used instead.
+            </summary>
+        </member>
+        <member name="F:Cake.Ftp.FtpDataConnectionType.EPRT">
+            <summary>
+            Extended active data connection, not recommended
+            unless you have a specific reason for using this
+            type. Creates a listening socket on the client
+            which requires firewall exceptions on the client
+            as well as client network when connecting to a
+            server outside of the client's network. The server
+            connects to the IP address it sees the client coming
+            from. This type of data connection supports IPv4 and IPv6.
+            </summary>
+        </member>
+        <member name="T:Cake.Ftp.FtpEncryptionMode">
+            <summary>Defines the type of encryption to use</summary>
+        </member>
+        <member name="F:Cake.Ftp.FtpEncryptionMode.None">
+            <summary>Plain text.</summary>
+        </member>
+        <member name="F:Cake.Ftp.FtpEncryptionMode.Implicit">
+            <summary>
+            FTPS encryption is used from the start of the connection, port 990.
+            </summary>
+        </member>
+        <member name="F:Cake.Ftp.FtpEncryptionMode.Explicit">
+            <summary>
+            Connection starts in plain text and FTPS encryption is enabled
+            with the AUTH command immediately after the server greeting.
+            </summary>
+        </member>
+        <member name="T:Cake.Ftp.FtpExists">
+            <summary>
+            Defines the behavior for uploading/downloading files that already exist
+            </summary>
+        </member>
+        <member name="F:Cake.Ftp.FtpExists.NoCheck">
+            <summary>
+            Do not check if the file exists. A bit faster than the other options.
+            Only use this if you are SURE that the file does not exist on the server.
+            Otherwise it can cause the UploadFile method to hang due to filesize mismatch.
+            </summary>
+        </member>
+        <member name="F:Cake.Ftp.FtpExists.Skip">
+            <summary>Skip the file if it exists, without any more checks.</summary>
+        </member>
+        <member name="F:Cake.Ftp.FtpExists.Overwrite">
+            <summary>Overwrite the file if it exists.</summary>
+        </member>
+        <member name="F:Cake.Ftp.FtpExists.Append">
+            <summary>
+            Append to the file if it exists, by checking the length and adding the missing data.
+            </summary>
+        </member>
+        <member name="F:Cake.Ftp.FtpExists.AppendNoCheck">
+            <summary>
+            Append to the file, but don't check if it exists and add missing data.
+            This might be required if you don't have permissions on the server to list files in the folder.
+            Only use this if you are SURE that the file does not exist on the server otherwise it can cause the UploadFile method to hang due to filesize mismatch.
+            </summary>
+        </member>
+        <member name="T:Cake.Ftp.FtpSettings">
+            <summary>
+            Contains settings used by <see cref="T:Cake.Ftp.FtpClient"/>
+            </summary>
+        </member>
+        <member name="M:Cake.Ftp.FtpSettings.#ctor">
+            <summary>
+            The constructor.
+            </summary>
+        </member>
+        <member name="P:Cake.Ftp.FtpSettings.Username">
+            <summary>
+            Gets or sets the FTP username.
+            </summary>
+        </member>
+        <member name="P:Cake.Ftp.FtpSettings.Password">
+            <summary>
+            Gets or sets the FTP password.
+            </summary>
+        </member>
+        <member name="P:Cake.Ftp.FtpSettings.FileExistsBehavior">
+            <summary>
+            Defines the behavior for uploading/downloading files that already exist. Default is Overwrite
+            </summary>
+        </member>
+        <member name="P:Cake.Ftp.FtpSettings.CreateRemoteDirectory">
+            <summary>
+            Create the remote directory if it does not exist. Slows down upload due to additional checks required.
+            </summary>
+        </member>
+        <member name="P:Cake.Ftp.FtpSettings.AutoDetectConnectionSettings">
+            <summary>
+            Automatic FTP and FTPS connection negotiation.
+            This method tries every possible combination of the FTP connection properties, and connects to the first successful profile.
+            Returns the FtpProfile if the connection succeeded, or null if it failed.
+            Default is true
+            </summary>
+        </member>
+        <member name="P:Cake.Ftp.FtpSettings.EncryptionMode">
+            <summary>
+            Only used if AutoDetectConnectionSettings is false.
+            The type of SSL to use, or none. Default is none. Explicit is TLS, Implicit is SSL.
+            </summary>
+        </member>
+        <member name="P:Cake.Ftp.FtpSettings.SslProtocols">
+            <summary>
+            Only used if AutoDetectConnectionSettings is false.
+            Encryption protocols to use. Only valid if EncryptionMode property is not equal to <see cref="F:Cake.Ftp.FtpEncryptionMode.None" />.
+            Default value is .NET Framework defaults from the <see cref="T:System.Net.Security.SslStream" /> class.
+            </summary>
+        </member>
+        <member name="P:Cake.Ftp.FtpSettings.DataConnectionType">
+            <summary>
+            Only used if AutoDetectConnectionSettings is false.
+            Data connection type, default is AutoPassive which tries
+            a connection with EPSV first and if it fails then tries
+            PASV before giving up. If you know exactly which kind of
+            connection you need you can slightly increase performance
+            by defining a specific type of passive or active data
+            connection here.
+            </summary>
+        </member>
+        <member name="P:Cake.Ftp.FtpSettings.ValidateAnyCertificate">
+            <summary>
+            If true all ssl certificates are accepted
+            </summary>
+        </member>
+        <member name="T:Cake.Ftp.Services.FtpService">
+            <summary>
+            The FTP Service.
+            </summary>
+        </member>
+        <member name="M:Cake.Ftp.Services.FtpService.#ctor(Cake.Core.Diagnostics.ICakeLog)">
+            <summary>
+            Intializes a new instance of the <see cref="T:Cake.Ftp.Services.FtpService"/> class. 
+            </summary>
+            <param name="log"></param>
+        </member>
+        <member name="M:Cake.Ftp.Services.FtpService.UploadFile(System.String,System.String,Cake.Core.IO.IFile,Cake.Ftp.FtpSettings)">
+            <summary>
+            Uploads a file.
+            </summary>
+            <param name="host">host of the FTP Client</param>
+            <param name="remotePath">path on the file on the server</param>
+            <param name="uploadFile">The file to upload.</param>
+            <param name="settings">Ftp Settings</param>
+        </member>
+        <member name="M:Cake.Ftp.Services.FtpService.DeleteFile(System.String,System.String,Cake.Ftp.FtpSettings)">
+            <summary>
+            Deletes a file.
+            </summary>
+            <param name="host">host of the FTP Client</param>
+            <param name="remotePath">path on the file on the server</param>
+            <param name="settings">Ftp Settings</param>
+        </member>
+        <member name="M:Cake.Ftp.Services.FtpService.UploadDirectories(System.String,System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.IEnumerable{System.String}},Cake.Ftp.FtpSettings)">
+            <summary>
+            Uploads a file.
+            </summary>
+            <param name="host">host of the FTP Client</param>
+            <param name="directories">Dictionary keyed by the remote path with a list of local files to upload to the remote path</param>
+            <param name="settings">Ftp Settings</param>
+        </member>
+        <member name="T:Cake.Ftp.Services.IFtpService">
+            <summary>
+            Interface for the <see cref="T:Cake.Ftp.Services.FtpService"/> class. 
+            </summary>
+        </member>
+        <member name="M:Cake.Ftp.Services.IFtpService.UploadFile(System.String,System.String,Cake.Core.IO.IFile,Cake.Ftp.FtpSettings)">
+            <summary>
+            Uploads a file.
+            </summary>
+            <param name="host">host of the FTP Client</param>
+            <param name="remotePath">path on the file on the server</param>
+            <param name="fileToUpload">The file to upload.</param>
+            <param name="settings">Ftp Settings</param>
+        </member>
+        <member name="M:Cake.Ftp.Services.IFtpService.DeleteFile(System.String,System.String,Cake.Ftp.FtpSettings)">
+            <summary>
+            Deletes a file.
+            </summary>
+            <param name="host">host of the FTP Client</param>
+            <param name="remotePath">path on the file on the server</param>
+            <param name="settings">Ftp Settings</param>
+        </member>
+        <member name="M:Cake.Ftp.Services.IFtpService.UploadDirectories(System.String,System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.IEnumerable{System.String}},Cake.Ftp.FtpSettings)">
+            <summary>
+            Uploads a file.
+            </summary>
+            <param name="host">host of the FTP Client</param>
+            <param name="directories">Dictionary keyed by the remote path with a list of local files to upload to the remote path</param>
+            <param name="settings">Ftp Settings</param>
+        </member>
+        <member name="T:Cake.Ftp.ValidatedNotNullAttribute">
+            <summary>
+            Indicates to Code Analysis that a method validates a particular parameter.
+            </summary>
+        </member>
+    </members>
+</doc>

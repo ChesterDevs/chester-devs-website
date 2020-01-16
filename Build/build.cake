@@ -1,14 +1,12 @@
-#addin "nuget:?package=Cake.WebDeploy&version=0.3.4"
-#addin "nuget:?package=SharpZipLib&version=1.2.0"
-#addin "nuget:?package=Cake.Compression&version=0.2.4"
+#addin "nuget:?package=FluentFTP&version=28.0.5"
 
+// Not yet available via nuget
+#r "./extensions/Cake.Ftp.dll"
 
 var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
 
-var webArtifactsPath = "./work/web/";
-var webArtifactsOutputFolder = "./artifacts/";
-var webArtifactsOutputFile = "./artifacts/web.zip";
+var webArtifactsPath = "./artifacts/web/";
 
 Task("CleanWeb")
     .Does(() => {
@@ -25,6 +23,8 @@ Task("BuildAndPackageWeb")
     .IsDependentOn("CleanDeploymentPackageWeb")
     .Does(() => {
 
+        EnsureDirectoryExists(webArtifactsPath);
+
         var settings = new DotNetCorePublishSettings
         {
             Configuration = configuration,
@@ -40,27 +40,25 @@ Task("BuildAndPackageWeb")
 
         DotNetCorePublish("../ChesterDevs.Core.Aspnet/ChesterDevs.Core.Aspnet/ChesterDevs.Core.Aspnet.csproj", settings);
 
-        EnsureDirectoryExists(webArtifactsOutputFolder);
-        ZipCompress(webArtifactsPath, webArtifactsOutputFile);
     });
 
 Task("DeployWeb")
     .Does(() => {
- 
-        DeployWebsite(new DeploySettings()
-        {
-            SourcePath = webArtifactsOutputFile,
-            Delete = false,
-            UseAppOffline = false,
-            UseChecksum = true,
-            AllowUntrusted = true,
-            NTLM = true,
-            ComputerName = "chester.dev",
-            SiteName = "chester.dev",
+
+        var settings = new FtpSettings() {
             Username = EnvironmentVariable("ChesterDev_Deploy_Username"),
             Password = EnvironmentVariable("ChesterDev_Deploy_Password")
-        });
+        };
+        
+        //Take site offline
+        FtpUploadFile("chester.dev", "/httpdocs/app_offline.htm", "./artifacts/app_offline.htm", settings);
 
+        var directoryToUpload = Directory(webArtifactsPath);
+        FtpUploadDirectory("chester.dev", "/httpdocs/", directoryToUpload, settings);
+
+        // Bring site back
+        FtpDeleteFile("chester.dev", "/httpdocs/app_offline.htm", settings);
+ 
     });
 
 Task("BuildAndDeployWeb")
