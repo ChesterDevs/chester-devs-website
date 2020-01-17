@@ -43,7 +43,7 @@ Task("BuildAndPackageWeb")
     });
 
 Task("DeployWeb")
-    .Does(() => {
+    .Does(async () => {
 
         var settings = new FtpSettings() {
             Username = EnvironmentVariable("ChesterDev_Deploy_Username"),
@@ -52,6 +52,9 @@ Task("DeployWeb")
         
         //Take site offline
         FtpUploadFile("chester.dev", "/httpdocs/app_offline.htm", "./artifacts/app_offline.htm", settings);
+        
+        // Wait 10 seconds to allow IIS to release the file locks
+        await System.Threading.Tasks.Task.Delay(10000);
 
         var directoryToUpload = Directory(webArtifactsPath);
         FtpUploadDirectory("chester.dev", "/httpdocs/", directoryToUpload, settings);
