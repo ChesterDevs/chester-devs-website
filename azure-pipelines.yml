@@ -18,7 +18,6 @@ steps:
   inputs:
     script: 'build\build.cake'
     target: 'BuildAndDeployWeb'
-    verbosity: 'Verbose'
 
   env:
     ChesterDev_Deploy_Username: $(ChesterDev_Deploy_Username)

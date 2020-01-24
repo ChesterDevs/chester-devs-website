@@ -54,7 +54,7 @@ BenchmarkDotNet.Artifacts/
 # .NET Core
 project.lock.json
 project.fragment.lock.json
-artifacts/
+ChesterDevs.Core.Aspnet/**/artifacts/
 **/Properties/launchSettings.json
 
 # StyleCop
@@ -303,9 +303,10 @@ __pycache__/
 
 # Cake - Uncomment if you are using it
 build/work/**
-build/artifacts/**
+[Bb]uild/artifacts/**
 build/tools/**
 !build/tools/packages.config
+![Bb]uild/artifacts/app_offline.htm
 
 # Tabs Studio
 *.tss
@@ -320,7 +321,7 @@ build/tools/**
 *.xsd.cs
 
 # OpenCover UI analysis results
-OpenCover/
+OpenCover/DeployWeb
 
 # Azure Stream Analytics local run output 
 ASALocalRun/
