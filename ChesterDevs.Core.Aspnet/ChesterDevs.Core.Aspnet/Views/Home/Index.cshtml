@@ -1,0 +1,64 @@
+﻿@model List<ChesterDevs.Core.Aspnet.App.RemoteData.Models.EventItem>
+@{
+    ViewData["Title"] = "Home";
+    ViewData["page"] = "home";
+}
+
+<main class="container left-container">
+    <div class="row">
+    
+        <partial name="_Nav" />
+        
+        <section class="sidebar col-lg-5 col-12 @ViewData["page"]">
+
+            <partial name="_HamburgerButton"/>
+
+            <partial name="_SiteInfo" />
+        </section><!-- end sidebar -->
+
+        <section class="col-lg-7 col-12 ml-auto main-content">
+
+            <div class="d-flex flex-row justify-content-between align-items-center">
+                <p class="flex-grow-1">Chester Devs is a place for people interested in programming to learn and meet like-minded people.</p>
+                <img class="w-25" src="@Url.Content("~/images/Chester-Devs-logo-1.png")" alt="Chester Devs Logo" />
+            </div>
+
+            <div class="col-sm-12">
+                <h2 class="favorites">Upcoming events</h2>
+            </div>
+        
+            @if (Model != null && Model.Any())
+            {
+
+                foreach (var evt in Model)
+                {
+                    <article class="post">
+                        <div class="post-preview col-10  no-gutter">
+                            <h2><a href="@evt.Link">@evt.Name</a></h2>
+
+                            <p>@evt.Description</p>
+
+                            <p class="meta">@evt.EventDate.ToString("ddd, dd MMM") @evt.Time @@ @evt.VenueName, @evt.VenueCity</p>
+
+                        </div>
+                        @if (evt.PhotoLink != null)
+                        {
+                            <div class=" col-3  no-gutter">
+                                <img src="@evt.PhotoLink" class="event-image">
+                            </div>
+                        }
+                    </article>
+                }
+            }
+            else
+            {
+                <p>Sorry, we could load the events, please try again in a moment.</p>
+            }
+
+
+        </section><!-- main content -->
+
+    </div> <!--/row -->
+
+</main> <!-- /container -->
+
