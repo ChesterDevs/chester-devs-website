@@ -9,7 +9,7 @@ namespace ChesterDevs.Core.Aspnet.BackgroundServices
 {
     public class RefreshRemoteDataHostedService : IHostedService, IDisposable
     {
-        private const int RefreshIntervalMinutes = 1;
+        private const int RefreshIntervalMinutes = 10;
 
         private readonly IRemoteDataSource _eventListingData;
         private readonly ILogger<RefreshRemoteDataHostedService> _logger;
