@@ -12,7 +12,7 @@ namespace ChesterDevs.Core.Aspnet.Controllers
 
         public IActionResult Feedback()
         {
-            return RedirectPermanent("https://docs.google.com/forms/d/e/1FAIpQLSdcayU15CTT5mtR3141XavCY30bBoSBwmlZBbeif4hwpXkgUQ/viewform");
+            return RedirectPermanent("https://fran682371.typeform.com/to/sISmVB");
         }
     }
 }
