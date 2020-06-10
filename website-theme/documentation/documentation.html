@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>Writer Documentation</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		hr { margin: 40px 0; }
+		.box p { margin-bottom:10px; }
+	</style>
+
+	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+
+</head>
+
+
+<body>
+	<div class="container">
+
+		<h3 class="center alt">&ldquo;Writer&rdquo; Documentation by &ldquo;Adventure Themes&rdquo;</h3>
+
+		<hr>
+
+		<h1 class="center">&ldquo;Writer Theme&rdquo;</h1>
+
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					Created: <strong>February 12th, 2015</strong><br>
+					Updated: <strong>August 13th, 2017</strong><br>
+					By: <a href="http://adventurethemes.com" target="_blank"><strong>Adventure Themes</strong></a>
+				</p>
+			</div><!-- end div .span-6 -->
+
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for purchasing Writer theme. If you have any questions that are beyond the scope of this help file, please feel free to contact us. Thanks so much!</p>
+			</div>
+		</div><!-- end div .borderTop -->
+
+		<hr>
+
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#intro">Introduction & Description</a></li>
+			<li><a href="#page-templates">Page Templates </a></li>
+			<li>
+				<a href="#css">CSS</a>
+				<ul>
+					<li><a href="#css-sub1">Sass</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#js">JS</a>
+				<ul>
+					<li><a href="#js-no-js">No JS</a></li>
+					<li><a href="#js-jpm">jPanel Menu</a></li>
+					<li><a href="#js-retina">Retina</a></li>
+				</ul>
+			</li>
+			<li><a href="#credits">Credits</a></li>
+
+		</ol>
+
+		<!--
+
+			intro
+
+		-->
+
+		<div class="section" id="s-intro">
+
+			<h3 id="intro">A) Introduction - <a href="#toc">top</a></h3>
+
+			<p>Writer Theme is a `responsive` template focussed on typography, minimal design and quality photography.</p>
+
+			<p>Writer will look great in any situation but was crafted especially for writers, photography, travel & food bloggers. The Writer theme helps you writing look fantastic. The example site is a multi user story telling blog style.</p>
+
+		</div>
+
+
+		<!--
+
+			Page Templates
+
+		-->
+
+		<div class="section" id="s-page-templates">
+
+			<h3 id="page-templates">B) Page Templates - <a href="#toc">top</a></h3>
+
+			<p>Writer Theme is based around a total of 9 different html pages that together create the necessary pages for any blog or website.</p>
+
+			<ul>
+				<li>Home Template(index.html)</li>
+				<li>Home Alternate Template(alt-home.html)</li>
+				<li>Post Template(post.html)</li>
+				<li>Post - Sidebar Template(post-sidebar.html)</li>
+				<li>Post - Footer Template(post.html)</li>
+				<li>Category Template(category.html)</li>
+				<li>Page Template(page.html)</li>
+				<li>Author Template(author.html)</li>
+				<li>Favorites Template(favorites.html)</li>
+				<li>Contact Template(contact.html)</li>
+			</ul>
+
+			<h4>Changing a hero image</h4>
+
+			<p>The most common question is how to change a hero images/sidebar image. These images use a CSS background image and can be changed inline in the HTML. </p>
+
+			<hr>
+
+			<img src="assets/images/home.png" alt="Home Page Template">
+			<h3>Home Page</h3>
+			<p>The Homepage sets the stage for the entire website. A hero image sidebar that repositons to a header on smaller screen sizes. Latest blog posts or articles ar eon the right hanf side there is also an alternate view which showcases categories.</p>
+
+			<p>Within the sidebar there is space for branding and a CTA.</p>
+
+			<p>Each page utilizes an off screen navigation activated via the burger menu on the top left hand side. </p>
+
+			<hr>
+
+			<img src="assets/images/home-alternate.png" alt="Home Alternate Page Template">
+			<h3>Home Alternate Page</h3>
+			<p>A new adition with Version 2, the alternate homepage may work for users who want less of a focus on imagery. Have the articles and categories on show both at the same time.</p>
+
+			<hr>
+
+			<img src="assets/images/post.png" alt="Post Page Template">
+			<h3>Post Page</h3>
+			<p>The bread and butter of any blog based website. The post page is intentionally minimal. Focus is on a larger header image. Body copy is set in `Droid Serif` while title copy is set in `Source Sans Pro` giving a great reader experience. The usual html elements are styled for writerts, blockquotes, pull quotes, lists etc. There is space for informationa about the author, category and length of post right above the title. </p>
+
+			<hr>
+
+			<img src="assets/images/post-sidebar.png" alt="Post Sidebar Page Template">
+			<h3>Post Sidebar Page</h3>
+			<p>A slight varaition on the standard post page that includes a sidebar. </p>
+
+			<hr>
+
+			<img src="assets/images/post-footer.png" alt="Post footer example">
+			<h3>Post footer example</h3>
+			<p>A quick Look at the footer section of the post page. You can decide wether to include the related stories section or just the footer.</p>
+
+			<hr>
+
+			<img src="assets/images/category.png" alt="Category Page Template">
+
+			<h3>Category Template</h3>
+			<p>The Category page is the typical archive example. Each category you use in your posts should link to the page and then only show the relevant posts.</p>
+
+			<hr>
+
+			<img src="assets/images/page.png" alt="Single Page Template">
+
+			<h3>Page/Post Template</h3>
+			<p>A stripped back full width template with an alternate footer to the post page.</p>
+
+			<img src="assets/images/author.png" alt="Author Page example">
+			<h3>Author Page Template</h3>
+			<p>Any fully fledged blog template requires an author page. Each post has meta data that can link to this author page. There is space for an avatar image and short bio description. Below the description is an area for popular or most recent posts by the author. </p>
+
+			<hr>
+
+			<img src="assets/images/favorites.png" alt="Favorites Page example">
+			<h3>Favorites Page Template</h3>
+
+			<p>The favorites template is another variation on the homepage which combines a grid view of posts with a list fo categories. </p>
+
+
+			<hr>
+
+			<img src="assets/images/contact.png" alt="contact Page example">
+			<h3>Contact Page Template</h3>
+			<p>A built in form ready to use as your point of contact. The form can be extended with any aditional fields and follows bootstrap conventions. </p>
+
+			<hr>
+
+		</div>
+
+		<div class="section" id="s-css">
+
+			<h3 id="css">C) CSS - <a href="#toc">top</a></h3>
+
+			<p>Writer uses the bootstrap framework for a bulletproof responsive grid system that ensures the sites looks great across devices. Bootstrap is the most popular front-end framework, visit <a href="http://getbootstrap.com">http://getbootstrap.com</a> for a list of the great features it provides.</p>
+
+			<p>All animations are controlled by CSS and not Javascript to ensure fast and smooth animations.</p>
+
+			<h4 id="css-sub1">Sass - <a href="#toc">top</a></h4>
+
+			<p>Writer was built using the Sass pre-processing language. If you have never used sass before visit <a href="http://http://sass-lang.com/">http://sass-lang.com</a> to learn about the great features that sass allows. If you are wishing to further develop the design of Writer you will want o edit the sass files and recompile the css into the minified file.</p>
+		</div>
+
+
+		<div class="section" id="s-js">
+
+			<h3 id="js">F) JS - <a href="#toc">top</a></h3>
+
+			<p>Writer makes uses of minimal amounts of Javascript to keep the site running lightning fast. jQuery is included and is a depedecy of jPanel menu.</p>
+
+			<h4 id="js-no-js"> NO Javascript Support - <a href="#toc">top</a></h4>
+			<p>As the menu is powered by Javascript there is also a menu within "noscript" tags to ensure that even with Javascript disabled on the users browser they can still navigate the site. </p>
+
+			<h4 id="js-jpm"> jPanel Menu - <a href="#toc">top</a></h4>
+			<p><a href="http://jpanelmenu.com/">Jpanelmenu</a> is used to power the offsite navigation. The sliding drawer allows for optimal readability while still having access to the entire site within one click.</p>
+
+			<h4 id="js-retina">Retina.js - <a href="#toc">top</a></h4>
+			<p><a href="http://imulus.github.io/retinajs/">Retina.js</a> powers the high resolution support. Just include an image at twice the resolution of your normal images and use the suffix @2x for example logo.png and logo@2x.png. </p>
+
+		</div>
+
+		<!--
+
+			Sources and Credits
+
+		-->
+
+		<div class="section" id="s-credits">
+
+			<h3 id="credits">G) Sources and Credits - <a href="#toc">top</a></h3>
+
+			<ul>
+				<li><a href="http://unsplash.com">Unslash</a> - Stock Photography</li>
+				<li><a href="http://deathtothestockphoto.com/">Death to the Stock Photo</a> - Stock Photography</li>
+				<li><a href="http://imulus.github.io/retinajs/">Retina.js</a> - Retina Image Support</li>
+				<li><a href="http://getbootstrap.com">Bootstrap</a> - CSS Framework</li>
+				<li><a href="http://jpanelmenu.com/">jPanelMeny</a> - Slide out navigation</li>
+				<li><a href="http://daneden.me/animate/">Animate.css</a> - CSS Animations</li>
+				<li><a href="http://bourbon.io">bourbon.io</a> - Sass Mixins</li>
+				<li><a href="http://uifaces.com">uifaces</a> - User Icon examples</li>
+			</ul>
+
+		</div>
+
+		<br><hr><br>
+
+		<p class="append-bottom alt large"><strong>Adventure Themes</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>
