@@ -2,21 +2,20 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using ChesterDevs.Core.Aspnet.App.RemoteData.Models;
 using LazyCache;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace ChesterDevs.Core.Aspnet.App.RemoteData
+namespace ChesterDevs.Core.Aspnet.App.RemoteData.EventData
 {
-    public interface IEventListingData
+    public interface IEventListingData : IRemoteDataSource
     {
         List<EventItem> GetData();
     }
 
-    public class EventListingData : IEventListingData, IRemoteDataSource
+    public class EventListingData : IEventListingData
     {
         private const string CACHE_KEY = nameof(EventListingData);
 

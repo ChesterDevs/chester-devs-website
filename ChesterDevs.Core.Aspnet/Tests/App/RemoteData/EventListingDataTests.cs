@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using ChesterDevs.Core.Aspnet.App;
 using ChesterDevs.Core.Aspnet.App.RemoteData;
-using ChesterDevs.Core.Aspnet.App.RemoteData.Models;
+using ChesterDevs.Core.Aspnet.App.RemoteData.EventData;
 using FluentAssertions;
 using LazyCache;
 using LazyCache.Mocks;
@@ -109,14 +109,6 @@ namespace Tests.App.RemoteData
             public Builder SetupCache()
             {
                 CacheMock.Setup(m => m.GetOrAdd<List<EventItem>>(nameof(EventListingData), It.IsAny<Func<ICacheEntry, List<EventItem>>>()))
-                    .Returns(new List<EventItem>());
-
-                return this;
-            }
-
-            public Builder SetupFileSystem()
-            {
-                FileSystemWrapperMock.Setup(m => m.ReadJson<List<EventItem>>(It.IsAny<string>()))
                     .Returns(new List<EventItem>());
 
                 return this;
