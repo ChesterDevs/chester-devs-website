@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ChesterDevs.Core.Aspnet.App.RemoteData.Models
+namespace ChesterDevs.Core.Aspnet.App.RemoteData.EventData
 {
     public class EventItem
     {

@@ -2,6 +2,6 @@
 {
     public class SecretData
     {
-        public string TestKey { get; set; }
+        public string GoogleApiKey { get; set; }
     }
 }

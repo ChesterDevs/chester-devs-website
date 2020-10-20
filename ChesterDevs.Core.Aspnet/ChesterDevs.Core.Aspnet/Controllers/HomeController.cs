@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using ChesterDevs.Core.Aspnet.App.PageHelpers;
 using ChesterDevs.Core.Aspnet.App.RemoteData;
+using ChesterDevs.Core.Aspnet.App.RemoteData.EventData;
 using ChesterDevs.Core.Aspnet.BackgroundServices;
 using Microsoft.AspNetCore.Mvc;
 using ChesterDevs.Core.Aspnet.Models;
@@ -14,17 +16,17 @@ namespace ChesterDevs.Core.Aspnet.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IEventListingData _eventListingData;
+        private readonly IHomeHelper _homeHelper;
 
-        public HomeController(ILogger<HomeController> logger, IEventListingData eventListingData)
+        public HomeController(ILogger<HomeController> logger, IHomeHelper homeHelper)
         {
             _logger = logger;
-            _eventListingData = eventListingData;
+            _homeHelper = homeHelper;
         }
 
         public IActionResult Index()
         {
-            return View(_eventListingData.GetData());
+            return View(_homeHelper.LoadViewModel());
         }
 
         [Route("[Controller]/[Action]/{view=Home}")]

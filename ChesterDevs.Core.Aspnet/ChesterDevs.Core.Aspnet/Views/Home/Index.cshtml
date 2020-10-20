@@ -1,4 +1,4 @@
-﻿@model List<ChesterDevs.Core.Aspnet.App.RemoteData.Models.EventItem>
+﻿@model ChesterDevs.Core.Aspnet.Models.ViewModels.HomeViewModel
 @{
     ViewData["Title"] = "Home";
     ViewData["page"] = "home";
@@ -23,37 +23,70 @@
                 <img class="w-25" src="@Url.Content("~/images/Chester-Devs-logo-1.png")" alt="Chester Devs Logo" />
             </div>
 
-            <div class="col-sm-12">
-                <h2 class="favorites">Upcoming events</h2>
-            </div>
-        
-            @if (Model != null && Model.Any())
-            {
+            <section class="row">
+                <div class="col-sm-12">
+                    <h2 class="favorites">Upcoming events</h2>
+                </div>
 
-                foreach (var evt in Model)
+                @if (Model?.EventItems != null && Model.EventItems.Any())
                 {
-                    <article class="post">
-                        <div class="post-preview col-10  no-gutter">
-                            <h2><a href="@evt.Link">@evt.Name</a></h2>
 
-                            <p>@evt.Description</p>
+                    foreach (var evt in Model.EventItems)
+                    {
+                        <article class="post">
+                            <div class="post-preview col-10  no-gutter">
+                                <h2><a href="@evt.Link">@evt.Name</a></h2>
 
-                            <p class="meta">@evt.EventDate.ToString("ddd, dd MMM") @evt.Time @@ @evt.VenueName, @evt.VenueCity</p>
+                                <p>@evt.Description</p>
 
-                        </div>
-                        @if (evt.PhotoLink != null)
-                        {
-                            <div class=" col-3  no-gutter">
-                                <img src="@evt.PhotoLink" class="event-image">
+                                <p class="meta">@evt.EventDate.ToString("ddd, dd MMM") @evt.Time @@ @evt.VenueName, @evt.VenueCity</p>
+
                             </div>
-                        }
-                    </article>
+                            @if (evt.PhotoLink != null)
+                            {
+                                <div class=" col-3  no-gutter">
+                                    <img src="@evt.PhotoLink" class="event-image">
+                                </div>
+                            }
+                        </article>
+                    }
                 }
-            }
-            else
-            {
-                <p>Hmm... There are no events to display, either nothing is scheduled or our link to Meetup isn't working. Head over to <a href="https://www.meetup.com/Chester-Devs/">Meetup</a> just in case.</p>
-            }
+                else
+                {
+                    <p>Hmm... There are no events to display, either nothing is scheduled or our link to Meetup isn't working. Head over to <a href="https://www.meetup.com/Chester-Devs/">Meetup</a> just in case.</p>
+                }
+            </section><!-- main content -->
+
+        
+            <section id="youtube-video-section" class="row ">
+                <div class="col-sm-12">
+                    <h2 class="favorites">Videos of past events</h2>
+                </div>
+
+                @if (Model?.YouTubeVideos != null && Model.YouTubeVideos.Any())
+                {
+
+                    foreach (var video in Model.YouTubeVideos)
+                    {
+                        <article class="post-favorite col-xs-12 col-sm-6 ">
+                            <a href="@("https://www.youtube.com/watch?v=" + video.VideoId)">
+                                <img src="@video.ThumbnailUrl" alt="Video Thumbnail" class="video-thumbnail">
+                            </a>
+                            <h3><a href="@("https://www.youtube.com/watch?v=" + video.VideoId)">@video.Title</a></h3>
+                            <p class="meta">@video.PublishedDate.ToLongDateString()</p>
+                        </article>
+                    }
+                }
+                else
+                {
+                    <p>Hmm... There are no videos to display, looks like something has gone wrong. Head over to our <a href="https://www.youtube.com/channel/UCi_fefulTHvf-BCNoChN6Pg">YouTube Channel</a>.</p>
+                }
+
+            </section><!-- end fav posts -->
+            <div class="view-all-by-author">
+                <a href="https://www.youtube.com/channel/UCi_fefulTHvf-BCNoChN6Pg">View more on our YouTube Channel<i class="fa fa-chevron-right"></i></a>
+            </div>
+
 
 
         </section><!-- main content -->
