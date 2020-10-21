@@ -22,3 +22,4 @@ steps:
   env:
     ChesterDev_Deploy_Username: $(ChesterDev_Deploy_Username)
     ChesterDev_Deploy_Password: $(ChesterDev_Deploy_Password)
+    TestKey: $(TestKey)

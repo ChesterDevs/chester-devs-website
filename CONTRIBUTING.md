@@ -16,6 +16,10 @@ Most issues can be broken down into Frontend development (Html, CSS, JS) and Bac
 3. Rebase your repository and branch to ensure you are upto date with master in the core repository
 4. Submit a Pull Request
 
+# Build and Deploy
+
+This is done automatically from the master branch - [Azure DevOps](https://dev.azure.com/chester-devs)
+
 # Website re-writes
 
 I would love there to be multiple versions of this website. There can only be one actually used, but it would be fasciating to see how it can be done in other languages/frameworks.

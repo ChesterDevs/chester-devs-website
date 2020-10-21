@@ -1,4 +1,6 @@
 #addin "nuget:?package=FluentFTP&version=28.0.5"
+#addin "nuget:?package=Cake.Json&version=5.2.0"
+#addin "nuget:?package=Newtonsoft.Json&version=11.0.2"
 
 // Not yet available via nuget
 #r "./extensions/Cake.Ftp.dll"
@@ -42,6 +44,20 @@ Task("BuildAndPackageWeb")
 
     });
 
+Task("PopulateSecrets")
+    .Does(() => {
+        var secretsTargetPath = webArtifactsPath + "info.json";
+        CopyFile("../ChesterDevs.Core.Aspnet/ChesterDevs.Core.Aspnet/App/Secrets/template.json", secretsTargetPath);
+
+        var secrets = ParseJsonFromFile(secretsTargetPath);
+        foreach (var item in secrets)
+        {
+            secrets[item.Key] = EnvironmentVariable(item.Key) ?? "";
+        }
+
+        SerializeJsonToFile(secretsTargetPath, secrets);
+    });
+
 Task("DeployWeb")
     .Does(async () => {
 
@@ -64,8 +80,12 @@ Task("DeployWeb")
  
     });
 
-Task("BuildAndDeployWeb")
+Task("CreateDeployableFiles")
     .IsDependentOn("BuildAndPackageWeb")
+    .IsDependentOn("PopulateSecrets");
+
+Task("BuildAndDeployWeb")
+    .IsDependentOn("CreateDeployableFiles")
     .IsDependentOn("DeployWeb");
 
 Task("Default")
