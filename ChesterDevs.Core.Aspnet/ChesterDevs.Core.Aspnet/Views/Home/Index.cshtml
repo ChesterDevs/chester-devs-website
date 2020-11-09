@@ -34,7 +34,7 @@
                     foreach (var evt in Model.EventItems)
                     {
                         <article class="post">
-                            <div class="post-preview col-10  no-gutter">
+                            <div class="post-preview col-9  no-gutter">
                                 <h2><a href="@evt.Link">@evt.Name</a></h2>
 
                                 <p>@evt.Description</p>
@@ -44,7 +44,7 @@
                             </div>
                             @if (evt.PhotoLink != null)
                             {
-                                <div class=" col-3  no-gutter">
+                                <div class="col-3  no-gutter">
                                     <img src="@evt.PhotoLink" class="event-image">
                                 </div>
                             }
