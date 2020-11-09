@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using ChesterDevs.Core.Aspnet.App.Secrets;
@@ -76,7 +77,9 @@ namespace ChesterDevs.Core.Aspnet.App.RemoteData.YouTube
                     VideoId = (string)video["id"]["videoId"],
                     Title = (string) video["snippet"]["title"],
                     ThumbnailUrl = (string) video["snippet"]["thumbnails"]["high"]["url"],
-                    PublishedDate = DateTime.Parse((string)video["snippet"]["publishedAt"])
+                    PublishedDate = DateTime.Parse((string)video["snippet"]["publishedAt"], 
+                        CultureInfo.InvariantCulture, 
+                        DateTimeStyles.None)
             })
                 .ToList();
         }
