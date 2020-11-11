@@ -96,7 +96,7 @@ namespace Tests.App.RemoteData
                 It.Is<List<YouTubeVideo>>(o =>
                     o[0].VideoId == "YxJesR9Gp9s"
                     && o[0].Title == "Title 1"
-                    && o[0].ThumbnailUrl == "https://i.ytimg.com/vi/YxJesR9Gp9s/mqdefault.jpg"),
+                    && o[0].ThumbnailUrl == "https://i.ytimg.com/vi/YxJesR9Gp9s/hqdefault.jpg"),
                 It.IsAny<MemoryCacheEntryOptions>()),
                 Times.Once,
                 "Video 1 has not been parsed correctly");
@@ -106,7 +106,7 @@ namespace Tests.App.RemoteData
                     It.Is<List<YouTubeVideo>>(o =>
                         o[1].VideoId == "FpBp6txmu-M"
                         && o[1].Title == "Title 2"
-                        && o[1].ThumbnailUrl == "https://i.ytimg.com/vi/FpBp6txmu-M/mqdefault.jpg"),
+                        && o[1].ThumbnailUrl == "https://i.ytimg.com/vi/FpBp6txmu-M/hqdefault.jpg"),
                     It.IsAny<MemoryCacheEntryOptions>()),
                 Times.Once,
                 "Video 2 has not been parsed correctly");
