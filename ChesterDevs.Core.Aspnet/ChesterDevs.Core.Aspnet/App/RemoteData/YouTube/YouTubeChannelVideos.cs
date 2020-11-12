@@ -31,6 +31,8 @@ namespace ChesterDevs.Core.Aspnet.App.RemoteData.YouTube
         private readonly ILogger<YouTubeChannelVideos> _logger;
         private readonly IFileSystemWrapper _fileSystemWrapper;
         private readonly ISecretManager _secretManager;
+        
+        private DateTime _lastAccessed = DateTime.MinValue;
 
         public YouTubeChannelVideos(IHttpWrapper httpWrapper, IAppCache cache, ILogger<YouTubeChannelVideos> logger, IFileSystemWrapper fileSystemWrapper, ISecretManager secretManager)
         {
@@ -54,6 +56,11 @@ namespace ChesterDevs.Core.Aspnet.App.RemoteData.YouTube
             {
                 if (string.IsNullOrEmpty(_secretManager.Secrets.GoogleApiKey))
                     return;
+
+                if (DateTime.Now.Subtract(_lastAccessed).Minutes < 30)
+                    return;
+
+                _lastAccessed = DateTime.Now;
 
                 var data = _httpWrapper.GetData(
                     string.Format(API_URL, _secretManager.Secrets.GoogleApiKey), 
