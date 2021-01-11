@@ -1,0 +1,53 @@
+@{
+    ViewData["Title"] = "IT Jobs - Advertise a job";
+    var sidbarImage = Url.Content("~/images/Groves.png");
+}
+<header class="hero-image" role="banner" style="background-image: url(@sidbarImage);">
+
+    <partial name="_HamburgerButton" />
+    <partial name="_Nav" />
+</header>
+
+<main class="container">
+    <div class="row">
+        <div class="col-12 single-content">
+            <div class="back-link">
+                <a asp-action="Index"><i class="fa fa-chevron-left"></i> Back to jobs </a>
+            </div>
+
+            <h1>Advertise a job</h1>
+
+            <div class="alert alert-success regular-text" role="alert">
+                All adverts are free until 1st April 2021
+            </div>
+
+            <table class="table regular-text">
+                <tr>
+                    <td>1 Advert per year</td>
+                    <td>Free</td>
+                </tr>
+                <tr>
+                    <td>5 Advert Bundle</td>
+                    <td>&pound;50</td>
+                </tr>
+                <tr>
+                    <td>10 Advert Bundle</td>
+                    <td>&pound;80</td>
+                </tr>
+                <tr>
+                    <td>50 Advert Bundle</td>
+                    <td>&pound;300</td>
+                </tr>
+            </table>
+
+            <p>To advertise a job here please contact <a href="mailto:fran@bluejumper.com">fran@bluejumper.com</a></p>
+
+
+
+        </div><!-- main-content/col -->
+    </div> <!--/row -->
+
+</main> <!-- /container -->
+
+
+

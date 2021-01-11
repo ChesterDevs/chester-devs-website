@@ -80,5 +80,122 @@ header.hero-image.sponsor-details {
     display: block;
 }
 
+.no-border {
+    border: none !important;
+}
+
+.with-border {
+    border-bottom: solid 1px #f5f5f5;
+}
+
+.no-bottom-padding {
+    padding-bottom: 0 !important;
+}
+
+.job-details {
+    text-align: right;
+    margin: 20px 0;
+    padding-bottom: 10px;
+}
+
+.job-details a {
+        font-size: 15px;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    }
+
+.list-group {
+    font-size: 2.1em;
+    padding-bottom: 10px;
+}
+
+.dark-links a {
+    color: black;
+}
+
+.back-link a {
+    font-size: 13px;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+}
+
+.content-box {
+    border: solid 1px #dedede;
+    border-radius: 5px;
+    text-align: center;
+    margin: 5px;
+    padding: 15px 0;
+}
+
+.content-box p {
+    margin:0
+}
+
+.sidebar-box {
+    border: solid 1px #dedede;
+    border-radius: 5px;
+    text-align: center;
+    margin: 5px 0;
+}
+
+    .sidebar-box h3 {
+        padding: 10px 0;
+        color: #b3b3b7;
+        text-transform: uppercase;
+        letter-spacing: 2pt;
+        border-bottom: solid 1px #dedede;
+        font-size: 12px;
+        font-size: 1.2rem;
+        margin: 0;
+    }
+
+    .sidebar-box i {
+        color: #b3b3b7;
+        font-size: 25em;
+    }
+.sidebar-box i.smaller {
+    color: #b3b3b7;
+    font-size: 20em;
+    margin: 5px;
+}
+
+.sidebar-box-footer {
+    padding-bottom: 5px;
+}
+
+    .sidebar-box-footer .btn {
+        font-size: 15px;
+        font-size: 1.5rem;
+    }
+
+    .regular-text {
+        font-size: 2em;
+    }
 
 
+@media (min-width: 992px) {
+    .regular-text {
+        font-size: 21px;
+        font-size: 2.1rem;
+    }
+}
+
+    @media (min-width: 768px) {
+        .regular-text {
+            font-size: 20px;
+            font-size: 2rem;
+        }
+    }
+
+.regular-text {
+    font-size: 18px;
+    font-size: 1.8rem;
+}
+
+.job-details-page .logo {
+    margin: 10px auto 10px auto;
+}

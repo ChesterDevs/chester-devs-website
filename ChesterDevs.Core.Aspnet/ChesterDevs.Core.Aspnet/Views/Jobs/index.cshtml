@@ -1,0 +1,73 @@
+@model ChesterDevs.Core.Aspnet.Models.ViewModels.JobListViewModel
+@{
+    ViewData["Title"] = "IT Jobs";
+    var sidbarImage = Url.Content("~/images/Groves.png");
+}
+<header class="hero-image" role="banner" style="background-image: url(@sidbarImage);">
+
+    <partial name="_HamburgerButton" />
+    <partial name="_Nav" />
+</header>
+
+<main class="container">
+    <div class="row">
+        <div class="col-12 col-lg-8 single-content-sidebar">
+
+            <h1>Chester Devs - IT Jobs</h1>
+
+            <p>These are jobs local to Chester advertised through Chester Devs - <a asp-action="Advertise">Advertise a job</a></p>
+
+            @if (Model != null && Model.HasJobs)
+            {
+                foreach (var job in Model.JobListPage.Jobs)
+                {
+
+                    <article class="post no-border no-bottom-padding">
+                        <div class="post-preview col-9  no-gutter">
+                            <h2><a asp-action="Details" asp-route-id="@job.Id">@job.Title</a></h2>
+
+                            <p>
+                                @Html.Raw(job.HtmlSafeDetail)
+                            </p>
+
+                            <p class="meta">@job.Location, @job.JobType, @job.Salary</p>
+
+                        </div>
+
+                        <div class="col-3  no-gutter">
+                            <img src="@job.LogoUrl" class="logo">
+                        </div>
+                    </article>
+
+                    <div class="job-details with-border">
+                        <a asp-action="Details" asp-route-id="@job.Id">View Details <i class="fa fa-chevron-right"></i></a>
+                    </div>
+
+                }
+            }
+            else
+            {
+                <p>Sorry, no jobs to display at the moment, please come back soon or <a asp-action="Subscribe">subscribe</a> for notifications of new jobs</p>
+            }
+            
+            @if (Model.HasNextPage)
+            {
+                <div class="view-all-by-author">
+                    <a asp-action="Index" asp-route-pagenumber="@Model.NextPage">View more <i class="fa fa-chevron-right"></i></a>
+                </div>
+            }
+
+            <div class="content-box">
+                <p>If you want to advertise a job here, <br />get your first post free - <a asp-action="Advertise">Advertise a job</a></>
+            </div>
+
+        </div><!-- main-content/col -->
+        <div class="col-12 col-lg-3 ml-auto single-content-sidebar-area">
+            <partial name="_SidebarjobSubscribe" />
+        </div>
+    </div> <!--/row -->
+
+</main> <!-- /container -->
+
+
+

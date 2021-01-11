@@ -1,0 +1,53 @@
+@{
+    ViewData["Title"] = "IT Jobs - Ask a recruiter";
+    var sidbarImage = Url.Content("~/images/Groves.png");
+}
+<header class="hero-image" role="banner" style="background-image: url(@sidbarImage);">
+
+    <partial name="_HamburgerButton" />
+    <partial name="_Nav" />
+</header>
+
+<main class="container">
+    <div class="row">
+        <div class="col-12 col-lg-8 single-content-sidebar">
+
+            <h1>Ask a Recruiter</h1>
+            <p>Fill in the form below to ask a question to our panel of trusted recruitment agents</p>
+
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" placeholder="Jane Doe" class="form-control" name="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" placeholder="example@email.com" class="form-control" name="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="number">Phone Number</label>
+                    <input type="tel" placeholder="+44778217779" class="form-control" name="number">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" name="message" placeholder="Hello, lets chat"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <input class="btn btn-default" type="submit" value="Send">
+                </div>
+            </form>
+
+        </div><!-- main-content/col -->
+        <div class="col-12 col-lg-3 ml-auto single-content-sidebar-area">
+            <partial name="_SidebarJobs"/>
+        </div>
+    </div> <!--/row -->
+
+</main> <!-- /container -->
+
+
+

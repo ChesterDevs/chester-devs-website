@@ -1,6 +1,6 @@
 <div id="menu-target">
     <ul>
-        <li><i class="fa fa-home"></i><a asp-controller="Home" asp-action="Pages" asp-route-view="home" >Home</a></li>
+        <li><i class="fa fa-home"></i><a asp-controller="Home" asp-action="Pages" asp-route-view="home">Home</a></li>
         <li><i class="fa fa-user"></i><a asp-controller="Home" asp-action="Pages" asp-route-view="sponsors">Sponsors</a></li>
         <li><i class="fa fa-anchor"></i><a asp-controller="Home" asp-action="Pages" asp-route-view="about">About</a></li>
         <li><i class="fa fa-github"></i><a asp-controller="Home" asp-action="Pages" asp-route-view="contributors">Contributors</a></li>
@@ -9,10 +9,18 @@
     </ul>
     <hr>
     <ul>
+        <li><i class="fa fa-briefcase"></i><a asp-controller="Jobs" asp-action="Index">Jobs</a></li>
+    </ul>
+    <hr>
+    <ul>
         <li><i class="fa fa-meetup"></i><a href="https://www.meetup.com/Chester-Devs/">Meetup</a></li>
         <li><i class="fa fa-slack"></i><a asp-controller="Shortlinks" asp-action="Slack">Slack</a></li>
         <li><i class="fa fa-twitter"></i><a href="https://twitter.com/chesterdevs">Twitter</a></li>
         <li><i class="fa fa-facebook"></i><a href="https://www.facebook.com/groups/chesterdevs/">Facebook Group</a></li>
         <li><i class="fa fa-linkedin"></i><a href="https://www.linkedin.com/groups/5160543/">LinkedIn Group</a></li>
+    </ul>
+    <hr>
+    <ul>
+        <li><i class="fa fa-meetup"></i><a asp-controller="Home" asp-action="Pages" asp-route-view="Privacy">Privacy</a></li>
     </ul>
 </div>
