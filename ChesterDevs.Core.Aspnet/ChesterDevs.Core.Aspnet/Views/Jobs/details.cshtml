@@ -34,7 +34,11 @@
                             {
                                 <div class="list-group-item"><i class="fa fa-phone fa-fw"></i>&nbsp; @Model.ContactPhone</div>
                             }
-                            </div>
+                            @if (!string.IsNullOrEmpty(Model.ApplyUrl))
+                            {
+                                <div class="list-group-item"><a class="btn btn-dark btn-block" target="_blank" href="@Model.ApplyUrl"><i class="fa fa-external-link fa-fw"></i> Apply</a></div>
+                            }
+                        </div>
                     </div>
 
                     <div class="col-12 col-sm-3  no-gutter text-center">
@@ -42,6 +46,8 @@
                     </div>
                 </div>
                 <p class="pt-2">@Html.Raw(Model.HtmlSafeDetail)</p>
+                <p><a class="btn btn-dark btn-block btn-lg" target="_blank" href="@Model.ApplyUrl"><i class="fa fa-external-link fa-fw"></i> Apply</a></p>
+                
             }
             else
             {

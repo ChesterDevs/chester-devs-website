@@ -15,6 +15,7 @@ namespace ChesterDevs.Core.Aspnet.App.Jobs
         public string Salary { get; set; }
         public string ContactEmail { get; set; }
         public string ContactPhone { get; set; }
+        public string ApplyUrl { get; set; }
         public string LogoUrl { get; set; }
 
         public string HtmlSafeDetail

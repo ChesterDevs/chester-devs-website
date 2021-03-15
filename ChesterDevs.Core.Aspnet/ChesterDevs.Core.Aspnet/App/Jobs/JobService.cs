@@ -18,6 +18,7 @@ namespace ChesterDevs.Core.Aspnet.App.Jobs
 
     public class JobService : IJobService
     {
+        //private const string API_URL = "https://localhost:5011";
         private const string API_URL = "https://cd-jobs.bluejumper.com";
         private static readonly HttpClient _httpClient = new HttpClient();
         private static readonly JsonSerializer _serializer = new JsonSerializer();
