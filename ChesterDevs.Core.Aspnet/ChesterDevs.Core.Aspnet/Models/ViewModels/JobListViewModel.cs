@@ -16,7 +16,7 @@ namespace ChesterDevs.Core.Aspnet.Models.ViewModels
             => (JobListPage?.PageCount ?? 0) > PageNumber;
 
         public int NextPage
-            => (JobListPage?.PageCount ?? 1) + 1;
+            => PageNumber + 1;
 
     }
 }
