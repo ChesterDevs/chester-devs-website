@@ -1,5 +1,5 @@
 @{
-    ViewData["Title"] = "IT Jobs - Ask a recruiter";
+    ViewData["Title"] = "IT Jobs - Advertise a job";
     var sidbarImage = Url.Content("~/images/Groves.png");
 }
 <header class="hero-image" role="banner" style="background-image: url(@sidbarImage);">
@@ -10,10 +10,22 @@
 
 <main class="container">
     <div class="row">
-        <div class="col-12 col-lg-8 single-content-sidebar">
+        <div class="col-12 single-content">
+            <div class="back-link">
+                <a asp-action="Index"><i class="fa fa-chevron-left"></i> Back to jobs </a>
+            </div>
 
-            <h1>Ask a Recruiter</h1>
-            <p>Fill in the form below to ask a question to our panel of trusted recruitment agents</p>
+            <h1>Recruiter Panel</h1>
+
+            <p>Chester Devs have partnered with the following trusted recruitment agents.</p>
+
+            <div class="d-flex justify-content-between recruiter-panel-logos">
+                <img src="https://via.placeholder.com/200x100/FFFF00/000000/?text=LOGO" />
+                <img src="https://via.placeholder.com/200x100/FFFF00/000000/?text=LOGO" />
+                <img src="https://via.placeholder.com/200x100/FFFF00/000000/?text=LOGO" />
+            </div>
+
+            <p>Use the form below to ask them a question or let them know you are looking for work.</p>
 
             <form>
                 <div class="form-group">
@@ -42,9 +54,7 @@
             </form>
 
         </div><!-- main-content/col -->
-        <div class="col-12 col-lg-3 ml-auto single-content-sidebar-area">
-            <partial name="_SidebarJobs"/>
-        </div>
+
     </div> <!--/row -->
 
 </main> <!-- /container -->

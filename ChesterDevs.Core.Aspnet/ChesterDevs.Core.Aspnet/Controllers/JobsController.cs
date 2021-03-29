@@ -49,5 +49,10 @@ namespace ChesterDevs.Core.Aspnet.Controllers
             return View();
         }
 
+        public IActionResult RecruiterPanel()
+        {
+            return View();
+        }
+
     }
 }
