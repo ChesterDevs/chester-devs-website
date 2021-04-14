@@ -14,13 +14,15 @@ namespace ChesterDevs.Core.Aspnet.Controllers
         private readonly IJobListHelper _jobListHelper;
         private readonly IJobDetailHelper _jobDetailHelper;
         private readonly IJobSubscriptionHelper _jobSubscriptionHelper;
+        private readonly IAskARecruiterHelper _askARecruiterHelper;
 
-        public JobsController(ILogger<JobsController> logger, IJobListHelper jobListHelper, IJobDetailHelper jobDetailHelper, IJobSubscriptionHelper jobSubscriptionHelper)
+        public JobsController(ILogger<JobsController> logger, IJobListHelper jobListHelper, IJobDetailHelper jobDetailHelper, IJobSubscriptionHelper jobSubscriptionHelper, IAskARecruiterHelper askARecruiterHelper)
         {
             _logger = logger;
             _jobListHelper = jobListHelper;
             _jobDetailHelper = jobDetailHelper;
             _jobSubscriptionHelper = jobSubscriptionHelper;
+            _askARecruiterHelper = askARecruiterHelper;
         }
 
         public async Task<IActionResult> Index(int? pageNumber, CancellationToken cancellationToken)
@@ -49,9 +51,18 @@ namespace ChesterDevs.Core.Aspnet.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult RecruiterPanel()
         {
-            return View();
+            return View(new AskARecruiterViewModel(){
+                AskARecruiter = new AskARecruiter()
+            });
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> RecruiterPanel(AskARecruiterViewModel model, CancellationToken cancellationToken)
+        {
+            return View(await  _askARecruiterHelper.SendAskARecruiter(model, cancellationToken));
         }
 
     }

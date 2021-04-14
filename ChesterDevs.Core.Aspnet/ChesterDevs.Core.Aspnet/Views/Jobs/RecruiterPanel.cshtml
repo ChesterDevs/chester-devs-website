@@ -1,5 +1,6 @@
+@model ChesterDevs.Core.Aspnet.Models.ViewModels.AskARecruiterViewModel
 @{
-    ViewData["Title"] = "IT Jobs - Advertise a job";
+    ViewData["Title"] = "IT Jobs - Recruitment Panel";
     var sidbarImage = Url.Content("~/images/Groves.png");
 }
 <header class="hero-image" role="banner" style="background-image: url(@sidbarImage);">
@@ -20,38 +21,52 @@
             <p>Chester Devs have partnered with the following trusted recruitment agents.</p>
 
             <div class="d-flex justify-content-between recruiter-panel-logos">
-                <img src="https://via.placeholder.com/200x100/FFFF00/000000/?text=LOGO" />
-                <img src="https://via.placeholder.com/200x100/FFFF00/000000/?text=LOGO" />
-                <img src="https://via.placeholder.com/200x100/FFFF00/000000/?text=LOGO" />
+                <img src="~/images/FazerRecruitment.png" alt="Fazer Recruitment" />
+                <img src="~/images/s2recruitment.png" alt="S2 Recruitment" />
             </div>
+        
+        @if (Model.Confirmation)
+        {
+
+            <p><em>Thank you, your message will be sent to the Recruitment Panel.</em></p>
+        }
+        else
+        {
 
             <p>Use the form below to ask them a question or let them know you are looking for work.</p>
 
-            <form>
+            <form asp-action="RecruiterPanel">
                 <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" placeholder="Jane Doe" class="form-control" name="name">
+                    <label asp-for="AskARecruiter.Name">Name</label>
+                    <input type="text" placeholder="Jane Doe" class="form-control" asp-for="AskARecruiter.Name">
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" placeholder="example@email.com" class="form-control" name="email">
+                    <label asp-for="AskARecruiter.Email">Email</label>
+                    <input type="email" placeholder="example@email.com" class="form-control" asp-for="AskARecruiter.Email">
                 </div>
 
                 <div class="form-group">
-                    <label for="number">Phone Number</label>
-                    <input type="tel" placeholder="+44778217779" class="form-control" name="number">
+                    <label asp-for="AskARecruiter.Phone">Phone Number</label>
+                    <input type="tel" placeholder="+44778217779" class="form-control" asp-for="AskARecruiter.Phone">
                 </div>
 
                 <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea class="form-control" name="message" placeholder="Hello, lets chat"></textarea>
+                    <label asp-for="AskARecruiter.Message">Message</label>
+                    <textarea class="form-control" asp-for="AskARecruiter.Message" placeholder="Hello, lets chat"></textarea>
                 </div>
 
                 <div class="form-group">
                     <input class="btn btn-default" type="submit" value="Send">
                 </div>
             </form>
+        }
+        
+        
+        <hr />
+
+        <p>For more details on how your data is shared see the <a asp-controller="Home" asp-action="Pages" asp-route-view="Privacy">privacy policy</a></p>
+
 
         </div><!-- main-content/col -->
 

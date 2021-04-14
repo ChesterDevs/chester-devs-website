@@ -12,7 +12,7 @@
 
 <main class="container">
     <div class="row">
-        <div class="col-12 single-content">
+        <div class="col-12 col-lg-8 single-content-sidebar">
 
 
             <h1>Who are we</h1>
@@ -22,7 +22,7 @@
             <h2>How does it work</h2>
             <p>All our events are listed on <a href="https://www.meetup.com/Chester-Devs/">Meetup</a>. Sign up and join our group there, you will receive email notifications about upcoming events each month.</p>
 
-            <h2 >Topics</h2>
+            <h2>Topics</h2>
             <p>Our talks are quite varied in both in topic and in the experience level of the target audience. We have had talks on programming languages, architecture, project/team management, data stores, best practice, technology.</p>
 
             <h2>Speakers</h2>
@@ -32,7 +32,17 @@
             <p>All our events are free to attendees. We cover costs via <a asp-controller="Home" asp-action="Pages" asp-route-view="sponsors">Sponsorship</a>. Details of how to become a sponsor can be found <a asp-controller="Home" asp-action="Pages" asp-route-view="SponorshipDetail">here</a>.</p>
 
         </div><!-- main-content/col -->
-    </div> <!--/row -->
-
+        <div class="col-12 col-lg-3 ml-auto single-content-sidebar-area">
+            <div class="similar-post">
+                <a asp-controller="Home" asp-action="Pages" asp-route-view="agents">Recruitment Agents</a>
+            </div>
+            <div class="similar-post">
+                <a asp-controller="Home" asp-action="Pages" asp-route-view="contributors">Contributors</a>
+            </div>
+            <div class="similar-post">
+                <a asp-controller="Home" asp-action="Pages" asp-route-view="Privacy">Privacy</a>
+            </div>
+        </div>
+    </div>
 </main> <!-- /container -->
 

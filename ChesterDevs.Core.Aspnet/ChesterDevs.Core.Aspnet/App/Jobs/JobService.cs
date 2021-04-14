@@ -14,6 +14,8 @@ namespace ChesterDevs.Core.Aspnet.App.Jobs
         Task<JobListPage> GetJobsAsync(int pageNumber, int pageSize, CancellationToken cancellationToken);
         Task<JobResponse> GetJobAsync(int jobId, CancellationToken cancellationToken);
         Task SubscribeAsync(string emailAddress, CancellationToken cancellationToken);
+
+        Task AskARecruiterAsync(AskARecruiter askARecruiter, CancellationToken cancellationToken);
     }
 
     public class JobService : IJobService
@@ -78,6 +80,22 @@ namespace ChesterDevs.Core.Aspnet.App.Jobs
 
                 using (var response = await
                     _httpClient.PostAsJsonAsync($"{API_URL}/api/email/subscribe", data, cancellationToken))
+                {
+                    response.EnsureSuccessStatusCode();
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex,"Error subscribing email");
+            }
+        }
+        
+        public async Task AskARecruiterAsync(AskARecruiter askARecruiter, CancellationToken cancellationToken)
+        {
+            try
+            {
+                using (var response = await
+                    _httpClient.PostAsJsonAsync($"{API_URL}/api/email/askarecruiter", askARecruiter, cancellationToken))
                 {
                     response.EnsureSuccessStatusCode();
                 }
