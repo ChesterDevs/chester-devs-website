@@ -26,18 +26,12 @@
         <section class="col-lg-7 col-12 ml-auto main-content">
 
 
-            <p>Chester Devs is funded in 3 parts</p>
+            <p>For details of how we are funded see our <a asp-controller="Home" asp-action="Pages" asp-route-view="SponorshipDetail">Funding Details page</a></p>
             
             <h3>Recruitment Panel</h3>
-            <p>Our <a asp-controller="Jobs" asp-action="RecruiterPanel">Recruitment Panel</a> consists of up to 5 trusted recruitment agents. These agents trusted not to be pushy in anyway, but are on hand to help Chester Devs members when then need it</p>
-        
-            
-            <h3>Job Advertising</h3>
-            <p>We charge a small amount for <a asp-controller="Jobs" asp-action="Index">advertising local jobs</a> on our website, and to members who <a asp-controller="Jobs" asp-action="Subscribe">subscribe to job alerts</a>. However, this is very much an opt in service, we will not hassle you with jobs unless you want them</p>
-
+            <partial name="_RecruiterPanel" />
 
             <h3>Our sponsors</h3>
-            <p>The following companies have paid for advertising via Chester Devs to get support us and get their name known amongst our fantastic members</p>
 
             <div class="posts-block animated fadeIn ">
 

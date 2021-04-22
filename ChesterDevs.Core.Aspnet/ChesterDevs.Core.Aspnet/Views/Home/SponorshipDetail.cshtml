@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Become a sponsor";
+    ViewData["Title"] = "Funding Details";
     ViewData["page"] = "sponsor-details";
 }
 <header class="hero-image @ViewData["page"]" role="banner">
@@ -14,13 +14,14 @@
     <div class="row">
         <div class="col-12 single-content">
 
-            <h1>Sponsorship</h1>
+            <h1>Funding Details</h1>
 
             <p>We are a not for profit Unincorporated Association.</p>
 
             <p>If you are interested in any of the following please <a asp-controller="Home" asp-action="Pages" asp-route-view="Contact">get in touch</a></p>
-            
+
             <h2>Recruitment Panel</h2>
+            <p>Our <a asp-controller="Jobs" asp-action="RecruiterPanel">Recruitment Panel</a> consists of up to 5 trusted recruitment agents. These agents trusted not to be pushy in anyway, but are on hand to help Chester Devs members when then need it</p>
             <p>Maximum of 5, £400 per year</p>
             <h3>Benefits</h3>
             <ul>
@@ -28,18 +29,13 @@
                 <li>Attend events as the “Named recruiter”</li>
                 <li>Listed on the Website - <a asp-controller="Jobs" asp-action="RecruiterPanel">Recruitment Panel</a></li>
                 <li>Receive messages sent via the website by members - <a asp-controller="Jobs" asp-action="RecruiterPanel">Recruitment Panel</a> </li>
-                <li>Option to attend a annual Recruiter Q&A event</li> 
+                <li>Option to attend a annual Recruiter Q&A event</li>
             </ul>
-            <hr/>
-            <h2>Job Advertising</h2>
-            <p>For price details see - <a asp-controller="Jobs" asp-action="Advertise">How to advertise a job</a></p>
-            <ul>
-                <li>1 free job every year</li>
-                <li>Listed on the website for 2 weeks</li>
-                <li>Emailed to members subscribed to Job Alerts</li>
-            </ul>
-            <hr/>
+
+            <hr />
+
             <h2>Sponsors</h2>
+            <p>Our Sponsors pay for advertising via Chester Devs to support us and get their name known amongst our fantastic members</p>
             <p>Maximum 3, £250 per year</p>
             <h3>Benefits</h3>
             <ul>
@@ -48,7 +44,18 @@
                 <li>Logo & link on website</li>
             </ul>
 
-            
+            <hr />
+
+            <h2>Job Advertising</h2>
+            <p>We charge a small amount for <a asp-controller="Jobs" asp-action="Index">advertising local jobs</a> on our website, and to members who <a asp-controller="Jobs" asp-action="Subscribe">subscribe to job alerts</a>. However, this is very much an opt in service, we will not hassle you with jobs unless you want them</p>
+            <p>For price details see - <a asp-controller="Jobs" asp-action="Advertise">How to advertise a job</a></p>
+            <ul>
+                <li>1 free job every year</li>
+                <li>Listed on the website for 2 weeks</li>
+                <li>Emailed to members subscribed to Job Alerts</li>
+            </ul>
+
+
         </div><!-- main-content/col -->
     </div> <!--/row -->
 

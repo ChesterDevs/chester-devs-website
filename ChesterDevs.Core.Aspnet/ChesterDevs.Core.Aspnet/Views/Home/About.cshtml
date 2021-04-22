@@ -29,19 +29,11 @@
             <p>Some of our speakers are Chester Dev members, or local experts, some come from quite a distance to to give talks they offer at conferences. Our speakers all give their time for free, although we occasionally help with travel costs. </p>
 
             <h2>Money</h2>
-            <p>All our events are free to attendees. We cover costs via <a asp-controller="Home" asp-action="Pages" asp-route-view="sponsors">Sponsorship</a>. Details of how to become a sponsor can be found <a asp-controller="Home" asp-action="Pages" asp-route-view="SponorshipDetail">here</a>.</p>
+            <p>All our events are free to attendees. We cover costs via our <a asp-controller="Jobs" asp-action="RecruiterPanel">Recruitment Panel</a>, <a asp-controller="Home" asp-action="Pages" asp-route-view="sponsors">Sponsorship</a> and <a asp-controller="Jobs" asp-action="Index">Job advertising</a>. For details see our <a asp-controller="Home" asp-action="Pages" asp-route-view="SponorshipDetail">Funding Details page</a>.</p>
 
         </div><!-- main-content/col -->
         <div class="col-12 col-lg-3 ml-auto single-content-sidebar-area">
-            <div class="similar-post">
-                <a asp-controller="Home" asp-action="Pages" asp-route-view="agents">Recruitment Agents</a>
-            </div>
-            <div class="similar-post">
-                <a asp-controller="Home" asp-action="Pages" asp-route-view="contributors">Contributors</a>
-            </div>
-            <div class="similar-post">
-                <a asp-controller="Home" asp-action="Pages" asp-route-view="Privacy">Privacy</a>
-            </div>
+            <partial name="_AboutSideNav"/>
         </div>
     </div>
 </main> <!-- /container -->
