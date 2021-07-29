@@ -11,7 +11,7 @@ namespace ChesterDevs.Core.Aspnet.Controllers
         [Route("/Feedback")]
         public IActionResult Feedback()
         {
-            return RedirectPermanent("https://fran682371.typeform.com/to/sISmVB");
+            return RedirectPermanent("https://forms.office.com/Pages/ResponsePage.aspx?id=kVkFyuLjwUOSgJospHkmWD_i3dEovIdOp_HvoF_AuApURURGRDc3OUcxTTI0Q1IzV1VaNjJBV1M4Ti4u");
         }
 
         [Route("/Slack")]
