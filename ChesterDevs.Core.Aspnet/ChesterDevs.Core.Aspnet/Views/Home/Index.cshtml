@@ -79,12 +79,12 @@
                 }
                 else
                 {
-                    <p>Hmm... There are no videos to display, looks like something has gone wrong. Head over to our <a href="https://www.youtube.com/channel/UCWS-6okcWfCrviVGzy1-KEg">YouTube Channel</a>.</p>
+                    <p>Hmm... There are no videos to display, looks like something has gone wrong. Head over to our <a asp-controller="Shortlinks" asp-action="YouTube">YouTube Channel</a>.</p>
                 }
 
             </section><!-- end fav posts -->
             <div class="view-all-by-author">
-                <a href="https://www.youtube.com/channel/UCWS-6okcWfCrviVGzy1-KEg">View more on our YouTube Channel<i class="fa fa-chevron-right"></i></a>
+                <a asp-controller="Shortlinks" asp-action="YouTube">View more on our YouTube Channel<i class="fa fa-chevron-right"></i></a>
             </div>
 
 

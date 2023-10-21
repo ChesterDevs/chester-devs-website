@@ -19,5 +19,11 @@ namespace ChesterDevs.Core.Aspnet.Controllers
         {
             return RedirectPermanent("https://join.slack.com/t/chesterdevs/shared_invite/zt-fk2t22wn-TNZ_tqp4JKE~lnKYthqThQ");
         }
+
+        [Route("/YouTube")]
+        public IActionResult YouTube()
+        {
+            return RedirectPermanent("https://www.youtube.com/channel/UCWS-6okcWfCrviVGzy1-KEg");
+        }
     }
 }
