@@ -20,9 +20,9 @@ namespace ChesterDevs.Core.Aspnet.App.RemoteData.YouTube
     public class YouTubeChannelVideos : IYouTubeChannelVideos
     {
         private const string CACHE_KEY = nameof(YouTubeChannelVideos);
-
+        private const string YOU_TUBE_CHANNEL_ID = "UCWS-6okcWfCrviVGzy1-KEg;";
         private const string API_URL =
-            "https://www.googleapis.com/youtube/v3/search?key={0}&part=snippet&type=video&channelId=UCi_fefulTHvf-BCNoChN6Pg&order=date&maxResults=4";
+            "https://www.googleapis.com/youtube/v3/search?key={0}&part=snippet&type=video&channelId=" + YOU_TUBE_CHANNEL_ID + "&order=date&maxResults=4";
 
         private const string FILE_CACHE_PATH = "/Data/YouTubeChannelVideos.json";
 
