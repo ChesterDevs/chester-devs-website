@@ -25,5 +25,11 @@ namespace ChesterDevs.Core.Aspnet.Controllers
         {
             return RedirectPermanent("https://www.youtube.com/channel/UCWS-6okcWfCrviVGzy1-KEg");
         }
+
+        [Route("/CodeOfConduct")]
+        public IActionResult CodeOfConduct()
+        {
+            return RedirectToActionPermanent("Pages", "Home", new { view= "CodeOfConduct" });
+        }
     }
 }
