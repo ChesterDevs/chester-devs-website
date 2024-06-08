@@ -13,7 +13,7 @@ namespace ChesterDevs.Core.Aspnet.App.Secrets
     {
         public SecretData Secrets { get; }
 
-        public SecretManager(IHostingEnvironment hostingEnvironment)
+        public SecretManager(IWebHostEnvironment hostingEnvironment)
         {
             var secretPath = $"{hostingEnvironment.ContentRootPath}\\info.json";
 

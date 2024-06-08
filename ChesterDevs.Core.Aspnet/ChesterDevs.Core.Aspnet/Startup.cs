@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 namespace ChesterDevs.Core.Aspnet
 {
@@ -20,9 +21,9 @@ namespace ChesterDevs.Core.Aspnet
 
         public IConfiguration Configuration { get; }
 
-        public ILifetimeScope AutofacContainer { get; private set; }
+        //public ILifetimeScope AutofacContainer { get; private set; }
 
-        public Startup(IHostingEnvironment env)
+        public Startup(IWebHostEnvironment env)
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
@@ -32,8 +33,9 @@ namespace ChesterDevs.Core.Aspnet
             this.Configuration = builder.Build();
         }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
-        public IServiceProvider ConfigureServices(IServiceCollection services)
+
+    
+        public void ConfigureServices(IServiceCollection services)
         {
             services.Configure<CookiePolicyOptions>(options =>
             {
@@ -43,24 +45,26 @@ namespace ChesterDevs.Core.Aspnet
             });
 
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
-            //services.AddHostedService<RefreshRemoteDataHostedService>();
-
             // Configure Autofac
-            var builder = new ContainerBuilder();
-            builder.Populate(services);
+            //var builder = new ContainerBuilder();
+            //builder.Populate(services);
 
+            services.AddMvc(x => x.EnableEndpointRouting = false);
             
+            //builder.RegisterModule(new AutofacModule());
+
+            //AutofacContainer = builder.Build();
+            
+            //return new AutofacServiceProvider(AutofacContainer);
+        }
+
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
             builder.RegisterModule(new AutofacModule());
-
-            AutofacContainer = builder.Build();
-            
-            return new AutofacServiceProvider(AutofacContainer);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
