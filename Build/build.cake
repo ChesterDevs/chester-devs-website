@@ -30,7 +30,7 @@ Task("BuildAndPackageWeb")
         var settings = new DotNetCorePublishSettings
         {
             Configuration = configuration,
-            Framework = "netcoreapp2.1",
+            Framework = "net8.0",
             Runtime = "win-x64",
             SelfContained = true,
             OutputDirectory = webArtifactsPath,
