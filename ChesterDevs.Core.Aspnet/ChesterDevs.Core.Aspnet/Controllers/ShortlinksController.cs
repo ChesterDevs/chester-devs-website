@@ -31,5 +31,12 @@ namespace ChesterDevs.Core.Aspnet.Controllers
         {
             return RedirectToActionPermanent("Pages", "Home", new { view= "CodeOfConduct" });
         }
+
+        [Route("/Notifications")]
+        public IActionResult Notifications()
+        {
+            return RedirectPermanent("https://zcmp.eu/Xpcs");
+        }
+
     }
 }
