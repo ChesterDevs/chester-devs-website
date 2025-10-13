@@ -1,102 +1,159 @@
-[
-  {
-    "created": 1579072079000,
-    "duration": 7200000,
-    "id": "267928336",
-    "name": "Event 1 Name",
-    "date_in_series_pattern": false,
-    "status": "upcoming",
-    "time": 1580929200000,
-    "local_date": "2020-02-05",
-    "local_time": "19:00",
-    "updated": 1579763798000,
-    "utc_offset": 0,
-    "waitlist_count": 0,
-    "yes_rsvp_count": 34,
-    "venue": {
-      "id": 24875005,
-      "name": "Venue 1 Name",
-      "lat": 53.192543029785156,
-      "lon": -2.88858699798584,
-      "repinned": true,
-      "address_1": "Venue 1 address",
-      "city": "Venue 1 Town",
-      "country": "gb",
-      "localized_country_name": "United Kingdom"
-    },
-    "group": {
-      "created": 1350037771000,
-      "name": "Chester Devs",
-      "id": 5356572,
-      "join_mode": "open",
-      "lat": 53.189998626708984,
-      "lon": -2.9200000762939453,
-      "urlname": "Chester-Devs",
-      "who": "ChesterDevs",
-      "localized_location": "Chester, United Kingdom",
-      "state": "Y1",
-      "country": "gb",
-      "region": "en_US",
-      "timezone": "Europe/London"
-    },
-    "link": "https://www.meetup.com/Chester-Devs/events/267928336/",
-    "description": "<p>Event 1 description</p> ",
-    "visibility": "public",
-    "member_pay_fee": false,
-    "featured_photo": {
-      "id": 488174322,
-      "highres_link": "https://secure.meetupstatic.com/photos/event/3/7/f/2/highres_488174322.jpeg",
-      "photo_link": "https://secure.meetupstatic.com/photos/event/3/7/f/2/600_488174322.jpeg",
-      "thumb_link": "https://secure.meetupstatic.com/photos/event/3/7/f/2/thumb_488174322.jpeg",
-      "type": "event",
-      "base_url": "https://secure.meetupstatic.com"
-    },
-    "plain_text_description": "Event 1 description"
+{
+  "pagination": {
+    "object_count": 1,
+    "page_number": 1,
+    "page_size": 50,
+    "page_count": 1,
+    "has_more_items": false
   },
-  {
-    "created": 1580317167000,
-    "duration": 9000000,
-    "id": "268297314",
-    "name": "Event 2 name",
-    "date_in_series_pattern": false,
-    "status": "upcoming",
-    "time": 1583348400000,
-    "local_date": "2020-03-04",
-    "local_time": "19:00",
-    "updated": 1580317167000,
-    "utc_offset": 0,
-    "waitlist_count": 0,
-    "yes_rsvp_count": 1,
-    "venue": {
-      "id": 24875005,
-      "name": "Venue 2 name",
-      "lat": 53.192543029785156,
-      "lon": -2.88858699798584,
-      "repinned": false,
-      "address_1": "Venue 2 address",
-      "city": "Venue 2 town",
-      "country": "gb",
-      "localized_country_name": "United Kingdom"
+  "events": [
+    {
+      "name": {
+        "text": "Event 1 Name",
+        "html": "Event 1 Name html"
+      },
+      "description": {
+        "text": "Event 1 description",
+        "html": "Event 1 description html"
+      },
+      "url": "https://www.eventbrite.co.uk/e/link1",
+      "start": {
+        "timezone": "Europe/London",
+        "local": "2020-05-02T19:00:00",
+        "utc": "2020-05-02T19:00:00Z"
+      },
+      "end": {
+        "timezone": "Europe/London",
+        "local": "2025-11-04T20:30:00",
+        "utc": "2025-11-04T20:30:00Z"
+      },
+      "organization_id": "2569267043351",
+      "created": "2025-10-01T14:27:15Z",
+      "changed": "2025-10-01T14:37:30Z",
+      "published": "2025-10-01T14:33:56Z",
+      "capacity": 30,
+      "capacity_is_custom": false,
+      "status": "live",
+      "currency": "USD",
+      "listed": true,
+      "shareable": true,
+      "invite_only": false,
+      "online_event": false,
+      "show_remaining": false,
+      "tx_time_limit": 1200,
+      "hide_start_date": false,
+      "hide_end_date": false,
+      "locale": "en_US",
+      "is_locked": false,
+      "privacy_setting": "unlocked",
+      "is_series": false,
+      "is_series_parent": false,
+      "inventory_type": "limited",
+      "is_reserved_seating": false,
+      "show_pick_a_seat": false,
+      "show_seatmap_thumbnail": false,
+      "show_colors_in_seatmap_thumbnail": false,
+      "source": "coyote",
+      "is_free": true,
+      "version": null,
+      "summary": "Event 1 summary",
+      "facebook_event_id": null,
+      "logo_id": "1141380253",
+      "organizer_id": "105644745611",
+      "venue_id": "249248193",
+      "category_id": "102",
+      "subcategory_id": "2004",
+      "format_id": "2",
+      "id": "1761040753299",
+      "resource_uri": "https://www.eventbriteapi.com/v3/events/1761040753299/",
+      "is_externally_ticketed": false,
+      "logo": {
+        "crop_mask": null,
+        "original": {
+          "url": "https://img.evbuc.com/originalimage1",
+          "width": 1600,
+          "height": 800
+        },
+        "id": "1141380253",
+        "url": "https://img.evbuc.com/image1",
+        "aspect_ratio": "2",
+        "edge_color": "#ffffff",
+        "edge_color_set": true
+      }
     },
-    "group": {
-      "created": 1350037771000,
-      "name": "Chester Devs",
-      "id": 5356572,
-      "join_mode": "open",
-      "lat": 53.189998626708984,
-      "lon": -2.9200000762939453,
-      "urlname": "Chester-Devs",
-      "who": "ChesterDevs",
-      "localized_location": "Chester, United Kingdom",
-      "state": "Y1",
-      "country": "gb",
-      "region": "en_US",
-      "timezone": "Europe/London"
-    },
-    "link": "https://www.meetup.com/Chester-Devs/events/268297314/",
-    "description": "<p>Event 2 description</p> ",
-    "visibility": "public",
-    "member_pay_fee": false,
-    "plain_text_description": "Event 2 description"
-  }
-]
+    {
+      "name": {
+        "text": "Event 2 Name",
+        "html": "Event 2 Name html"
+      },
+      "description": {
+        "text": "Event 2 description",
+        "html": "Event 2 description html"
+      },
+      "url": "https://www.eventbrite.co.uk/e/link2",
+      "start": {
+        "timezone": "Europe/London",
+        "local": "2020-04-03T19:00:00",
+        "utc": "2020-04-03T19:00:00Z"
+      },
+      "end": {
+        "timezone": "Europe/London",
+        "local": "2025-11-04T20:30:00",
+        "utc": "2025-11-04T20:30:00Z"
+      },
+      "organization_id": "2569267043351",
+      "created": "2025-10-01T14:27:15Z",
+      "changed": "2025-10-01T14:37:30Z",
+      "published": "2025-10-01T14:33:56Z",
+      "capacity": 30,
+      "capacity_is_custom": false,
+      "status": "live",
+      "currency": "USD",
+      "listed": true,
+      "shareable": true,
+      "invite_only": false,
+      "online_event": false,
+      "show_remaining": false,
+      "tx_time_limit": 1200,
+      "hide_start_date": false,
+      "hide_end_date": false,
+      "locale": "en_US",
+      "is_locked": false,
+      "privacy_setting": "unlocked",
+      "is_series": false,
+      "is_series_parent": false,
+      "inventory_type": "limited",
+      "is_reserved_seating": false,
+      "show_pick_a_seat": false,
+      "show_seatmap_thumbnail": false,
+      "show_colors_in_seatmap_thumbnail": false,
+      "source": "coyote",
+      "is_free": true,
+      "version": null,
+      "summary": "Event 2 summary",
+      "facebook_event_id": null,
+      "logo_id": "1141380253",
+      "organizer_id": "105644745611",
+      "venue_id": "249248193",
+      "category_id": "102",
+      "subcategory_id": "2004",
+      "format_id": "2",
+      "id": "1761040753299",
+      "resource_uri": "https://www.eventbriteapi.com/v3/events/1761040753299/",
+      "is_externally_ticketed": false,
+      "logo": {
+        "crop_mask": null,
+        "original": {
+          "url": "https://img.evbuc.com/originalimage2",
+          "width": 1600,
+          "height": 800
+        },
+        "id": "1141380253",
+        "url": "https://img.evbuc.com/image2",
+        "aspect_ratio": "2",
+        "edge_color": "#ffffff",
+        "edge_color_set": true
+      }
+    }
+  ]
+}

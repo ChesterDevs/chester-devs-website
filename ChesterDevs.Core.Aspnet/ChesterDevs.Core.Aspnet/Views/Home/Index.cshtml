@@ -39,7 +39,7 @@
 
                                 <p>@evt.Description</p>
 
-                                <p class="meta">@evt.EventDate.ToString("ddd, dd MMM") @evt.Time @@ @evt.VenueName, @evt.VenueCity</p>
+                                <p class="meta">@evt.EventDate.ToString("ddd, dd MMM") @evt.Time</p>
 
                             </div>
                             @if (evt.PhotoLink != null)
@@ -53,7 +53,7 @@
                 }
                 else
                 {
-                    <p>Hmm... There are no events to display, either nothing is scheduled or our link to Meetup isn't working. Head over to <a href="https://www.meetup.com/Chester-Devs/">Meetup</a> just in case.</p>
+                    <p>Hmm... There are no events to display, either nothing is scheduled or our link to Eventbrite isn't working. Head over to <a href="https://www.eventbrite.co.uk/o/chester-devs-105644745611/">Eventbrite</a> just in case.</p>
                 }
             </section><!-- main content -->
 
