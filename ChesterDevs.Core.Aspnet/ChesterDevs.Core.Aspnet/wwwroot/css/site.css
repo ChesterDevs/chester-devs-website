@@ -205,3 +205,17 @@ header.hero-image.sponsor-details {
     margin-left: 30px;
     margin-right: 30px;
 }
+
+
+
+.btn-image img {
+    max-width: 100px;
+}
+
+.mixed-links {
+    font-size: 13px;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+}
