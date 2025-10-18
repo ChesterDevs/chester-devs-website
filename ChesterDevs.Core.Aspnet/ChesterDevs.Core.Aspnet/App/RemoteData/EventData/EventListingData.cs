@@ -74,7 +74,7 @@ namespace ChesterDevs.Core.Aspnet.App.RemoteData.EventData
                 Name = (string)evt["name"]["text"],
                 Link = (string)evt["url"],
                 Description = Truncate((string)evt["summary"], 250),
-                EventDate = DateTime.ParseExact((string)evt["start"]["local"].Split('T')[0], "yyyy-dd-MM", CultureInfo.InvariantCulture).Date,
+                EventDate = DateTime.ParseExact(((string)evt["start"]["local"]).Split('T')[0], "yyyy-dd-MM", CultureInfo.InvariantCulture).Date,
                 Time = DateTime.Parse((string)evt["start"]["local"]).ToShortTimeString(),
                 PhotoLink = (string)evt["logo"]?["url"]
             })
