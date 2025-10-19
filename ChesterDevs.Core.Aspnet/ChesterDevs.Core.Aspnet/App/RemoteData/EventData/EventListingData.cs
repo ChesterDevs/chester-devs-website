@@ -68,15 +68,17 @@ namespace ChesterDevs.Core.Aspnet.App.RemoteData.EventData
         //Todo: Replace with eventbrite
         private List<EventItem> ResponseBuilder(Stream response)
         {
-            var json = JObject.ReadFrom(new JsonTextReader(new StreamReader(response)));
+            var rawJson = (new StreamReader(response)).ReadToEnd();
+            var settings = new JsonSerializerSettings { DateParseHandling = DateParseHandling.None };
+            var json = JsonConvert.DeserializeObject<JObject>(rawJson, settings);
 
             return json["events"].Select(evt => new EventItem()
             {
                 Name = (string)evt["name"]["text"],
                 Link = (string)evt["url"],
                 Description = Truncate((string)evt["summary"], 250),
-                EventDate = ((DateTime)evt["start"]["local"]).Date,
-                Time = ((DateTime)evt["start"]["local"]).ToShortTimeString(),
+                EventDate = DateTime.ParseExact(((string)evt["start"]["local"]).Split('T')[0], "yyyy-MM-dd", CultureInfo.InvariantCulture).Date,
+                Time = ((string)evt["start"]["local"]).Split('T')[1].Substring(0,5),
                 PhotoLink = (string)evt["logo"]?["url"]
             })
                 .ToList();
