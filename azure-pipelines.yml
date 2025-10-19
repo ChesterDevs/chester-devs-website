@@ -23,3 +23,4 @@ steps:
     ChesterDev_Deploy_Username: $(ChesterDev_Deploy_Username)
     ChesterDev_Deploy_Password: $(ChesterDev_Deploy_Password)
     GoogleApiKey: $(GoogleApiKey)
+    EventBriteApiKey: $(EventBriteApiKey)
