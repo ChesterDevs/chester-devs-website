@@ -68,7 +68,7 @@ namespace Tests.App.RemoteData
                     o[0].Name == "Event 1 Name"
                     && o[0].Link == "https://www.eventbrite.co.uk/e/link1"
                     && o[0].Description == "Event 1 summary"
-                    && o[0].EventDate == new DateTime(2020, 02, 05)
+                    && o[0].EventDate == new DateTime(2025, 11, 04)
                     && o[0].Time == "19:00"
                     && o[0].PhotoLink == "https://img.evbuc.com/image1"),
                 It.IsAny<MemoryCacheEntryOptions>()),
@@ -81,7 +81,7 @@ namespace Tests.App.RemoteData
                         o[1].Name == "Event 2 Name"
                         && o[1].Link == "https://www.eventbrite.co.uk/e/link2"
                         && o[1].Description == "Event 2 summary"
-                        && o[1].EventDate == new DateTime(2020, 03, 04)
+                        && o[1].EventDate == new DateTime(2020, 04, 03)
                         && o[1].Time == "19:00"
                         && o[1].PhotoLink == "https://img.evbuc.com/image2"),
                     It.IsAny<MemoryCacheEntryOptions>()),
